@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro Digital Informática</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    /* ESTILOS DE LECTURA (TIPO LIBRO) */
+    :root { --p: #2563eb; --s: #db2777; --bg: #f8fafc; --c: #fff; --t: #334155; }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--t); padding-bottom: 80px; }
+    .nav { background: var(--p); color: #fff; padding: 1rem; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .bk { background: 0 0; border: 0; color: #fff; font-size: 24px; margin-right: 15px; cursor: pointer; }
+    .tit { font-weight: 800; font-size: 1.2rem; }
+    .con { max-width: 800px; margin: 25px auto; padding: 0 20px; }
+    
+    /* Tarjetas */
+    .grd { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+    .crd { background: var(--c); border-radius: 16px; padding: 30px 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); cursor: pointer; border-bottom: 5px solid transparent; transition: transform .2s; }
+    .crd:active { transform: scale(.98); }
+    .crd.bim { border-bottom-color: var(--s); } .crd.bim .ic { color: var(--s); }
+    .ic { font-size: 45px; color: var(--p); margin-bottom: 10px; }
+    .ct { font-weight: 800; color: #1e293b; display: block; }
+    
+    /* Bloqueo */
+    .lck { opacity: 0.6; background: #e2e8f0; cursor: not-allowed; border-color: #94a3b8 !important; }
+    .lck .ic { color: #94a3b8 !important; }
+
+    /* Listas */
+    .lst { background: var(--c); border-radius: 16px; overflow: hidden; }
+    .it { padding: 25px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; cursor: pointer; font-weight: 600; }
+    .it:hover { background: #f8fafc; }
+
+    /* Detalle (El Libro) */
+    .dt { background: var(--c); border-radius: 16px; padding: 30px; line-height: 1.8; }
+    .bdg { background: #dbeafe; color: var(--p); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; }
+    h2 { color: #1e293b; margin: 15px 0 25px; font-size: 1.8rem; }
+    
+    /* Texto Rico */
+    .bx p { margin-bottom: 15px; }
+    .bx ul, .bx ol { margin-left: 20px; margin-bottom: 20px; }
+    .bx li { margin-bottom: 8px; }
+    .bx strong { color: #1e293b; }
+    
+    /* Secciones */
+    .sh { display: flex; align-items: center; font-weight: 800; font-size: 1.1rem; margin: 30px 0 15px; color: var(--p); border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+    .sh.act { color: var(--s); }
+    .sh span { margin-right: 10px; font-size: 24px; }
+
+    /* Actividades */
+    .tabs { display: flex; gap: 10px; margin-bottom: 15px; }
+    .tb { flex: 1; padding: 12px; border: 1px solid #e2e8f0; background: #fff; border-radius: 10px; font-weight: 700; color: #64748b; cursor: pointer; }
+    .tb.on { background: var(--s); color: #fff; border-color: var(--s); }
+    .abx { background: #fff1f2; padding: 25px; border-radius: 12px; border-left: 5px solid var(--s); }
+
+    .vid { display: flex; justify-content: center; align-items: center; width: 100%; background: #ef4444; color: #fff; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 800; margin-top: 40px; font-size: 1.1rem; }
+    .hid { display: none !important; }
+</style>
+</head>
+<body>
+<nav class="nav"><button id="b" class="bk hid material-icons">arrow_back</button><div id="t" class="tit">Informatica Escolar</div></nav>
+<main id="m" class="con"></main>
+
+<script>
+// --- AQUÍ COMIENZA EL CONTENIDO ---
+  // === GRADO 1 ===
+const g1_b1 = [
+ {t:"Semana 1: ¿Qué es mi dispositivo?", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Conocer las partes físicas de la tableta o celular y cómo usar nuestros dedos en la pantalla sin miedo.</p><p><strong>📖 Explicación:</strong><br>Un dispositivo inteligente no es solo una pantalla de vidrio. Es una pequeña computadora que tiene 'ojos' y 'botones mágicos'.</p><ul><li><b>Botón de Encendido:</b> Es el que despierta al celular cuando está dormido.</li><li><b>Botones de Volumen:</b> Sirven para que hable más fuerte o en secreto.</li><li><b>Pantalla Táctil:</b> Funciona con el calor de tu dedo. ¡No necesitas apretar fuerte! Es como tocar una burbuja de jabón sin romperla.</li></ul><p><strong>🛠️ Manos a la obra (Paso a paso):</strong><br>1. Sostén tu dispositivo con las dos manos.<br>2. Busca los botones en los bordes.<br>3. Presiona suavemente el botón de encendido para ver la luz.<br>4. Usa tu dedo índice para deslizar en la pantalla.</p>", 
+  a1:{t:"Simón Dice Digital", d:"El profesor dirá: '¡Simón dice tocar el botón de subir volumen!' y todos deben hacerlo. Luego '¡Simón dice bloquear pantalla!'."}, 
+  a2:{t:"Mi Dibujo Tecnológico", d:"En una hoja de papel, dibuja tu tableta. Pinta de <b>ROJO</b> el botón de apagar y de <b>AZUL</b> los botones de volumen."}, 
+  v:"partes del celular para niños"},
+ {t:"Semana 2: Higiene y Cuidado", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Cómo limpiar nuestro equipo y evitar accidentes fatales.</p><p><strong>📖 Explicación:</strong><br>Tu dispositivo es delicado. Tiene tres grandes enemigos:</p><ol><li><b>El Agua:</b> Si se moja, deja de funcionar para siempre.</li><li><b>La Comida:</b> Las migas y los dedos pegajosos ensucian la pantalla.</li><li><b>Las Caídas:</b> El suelo es lava para tu celular. Siempre debe estar en el centro de la mesa, nunca en la orilla.</li></ol><p><strong>🛠️ Manos a la obra:</strong><br>Nunca limpies la pantalla con tu suéter (la ropa tiene polvo que raya). Usa un pañito suave (de microfibra) y haz círculos suaves sobre la pantalla hasta que te veas como en un espejo.</p>", 
+  a1:{t:"Limpieza Guiada", d:"Con un pañito, todos limpiaremos la pantalla al mismo tiempo siguiendo al profesor."}, 
+  a2:{t:"Zona de Peligro", d:"Mira a tu alrededor. Señala 3 lugares donde NO debes poner tu celular (ej: cerca de una botella de agua, en la orilla de la mesa, en el suelo)."}, 
+  v:"cuidados del celular para niños"},
+ {t:"Semana 3: La Cámara Mágica (Enfoque)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Abrir la cámara y lograr que la foto se vea clarita (enfocada).</p><p><strong>📖 Explicación:</strong><br>¿Alguna vez has visto una foto borrosa? Eso pasa porque la cámara 'no sabía qué mirar'. La cámara es como un ojo; necesita que le digas qué es lo importante. Para eso usamos el <b>Enfoque Táctil</b>.</p><p><strong>🛠️ Manos a la obra (Paso a paso):</strong><br>1. Abre la aplicación de Cámara.<br>2. Apunta a un objeto.<br>3. <b>¡El Truco!</b> Toca con tu dedo en la pantalla justo donde está el objeto.<br>4. Verás un cuadrito o círculo amarillo. Eso significa que ya enfocó. ¡Dispara!</p>", 
+  a1:{t:"Cazador de Objetos", d:"Pon un borrador en la mesa. Tócale la nariz al borrador (en la pantalla) para enfocar y toma la foto."}, 
+  a2:{t:"Cerca y Lejos", d:"Toma una foto a tu mano (muy cerca) y luego una foto a la pizarra (muy lejos). Debes tocar la pantalla cada vez para enfocar."}, 
+  v:"tomar fotos con celular niños"},
+ {t:"Semana 4: Fotografiando Tareas", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Tomar una foto perfecta de nuestro cuaderno para enviarla al profesor.</p><p><strong>📖 Explicación:</strong><br>Para mandar tareas, la foto debe ser perfecta. Si está oscura o chueca, el profesor no podrá leerla.</p><ul><li><b>La Luz:</b> La luz debe dar en el cuaderno, no en la cámara.</li><li><b>El Ángulo:</b> Debes ponerte arriba del cuaderno, como un pájaro volando.</li></ul><p><strong>🛠️ Manos a la obra:</strong><br>1. Pon tu cuaderno sobre una mesa plana.<br>2. Levántate de la silla.<br>3. Sostén el celular con dos manos encima de la hoja.<br>4. ¡Cuidado con tu sombra! Muévete si tu sombra tapa las letras.</p>", 
+  a1:{t:"El Fotógrafo Escolar", d:"Toma una foto a la página 10 de tu libro. Revisa: ¿Se lee todo? ¿Salió tu sombra?"}, 
+  a2:{t:"Editor de Luz", d:"Toma una foto con poca luz (bajo la mesa). Luego toma otra igual acercándote a una ventana. Compara las dos fotos."}, 
+  v:"escanear tareas con celular"},
+ {t:"Semana 5: Mi Galería", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Encontrar nuestras fotos y borrar las que no sirven.</p><p><strong>📖 Explicación:</strong><br>Todas las fotos que tomas se van a una casita llamada 'Galería' o 'Fotos'. A veces llenamos la casita de fotos feas (el suelo, fotos negras) y hay que limpiar para tener espacio.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Busca el ícono que parece una flor o un paisaje (Galería).<br>2. Entra y mira tus fotos.<br>3. Si ves una foto negra, borrosa o que no te gusta, tócala y busca el basurero 🗑️ para borrarla.</p>", 
+  a1:{t:"Basurero Digital", d:"Entra a tu galería. Encuentra 3 fotos que no sirvan y bórralas para siempre."}, 
+  a2:{t:"Mis Favoritas", d:"Busca la foto más bonita que tengas y dale al corazón ❤️ (Favoritos) para no perderla nunca."}, 
+  v:"galeria de fotos android niños"},
+ {t:"Semana 6: Emojis y Teclado", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Escribir nuestro nombre y usar caritas (emojis) para expresarnos.</p><p><strong>📖 Explicación:</strong><br>El teclado del celular es mágico. Tiene letras para escribir palabras, pero también tiene dibujos llamados <b>Emojis</b>. Un emoji vale más que mil palabras: una carita feliz 🙂 dice que estás contento sin escribir nada.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre una aplicación de Notas.<br>2. Toca la pantalla para que salga el teclado.<br>3. Busca la carita feliz 🙂 en el teclado para abrir el menú de emojis.<br>4. Explora los animales, comidas y caritas.</p>", 
+  a1:{t:"Mi Nombre Animal", d:"Escribe tu nombre y pon al lado el animal que te represente. (Ejemplo: 'Ana 🦋')."}, 
+  a2:{t:"Cuento con Emojis", d:"Intenta escribir una frase solo con dibujos. Ej: 🏠 🏃 🏫 (Corro de casa a la escuela)."}, 
+  v:"teclado y emojis para niños"},
+ {t:"Semana 7: Comandos de Voz", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Hablar con el celular para que nos ayude sin tocarlo.</p><p><strong>📖 Explicación:</strong><br>Tu celular tiene oídos. Puedes pedirle cosas sin tocarlo usando el <b>Asistente de Voz</b>. Es como tener un amigo robot que sabe todo. Puedes pedirle que abra aplicaciones o que te diga la hora.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Busca el micrófono 🎙️ en la barra de Google o mantén presionado el botón de inicio.<br>2. Di fuerte y claro: 'Abrir calculadora'.<br>3. ¡Mira cómo obedece sin que tú busques nada!</p>", 
+  a1:{t:"La Orden Mágica", d:"Pasa al frente y dile al celular: <i>'Cuéntame un chiste'</i>. Todos escucharemos la respuesta."}, 
+  a2:{t:"Sonidos Animales", d:"Pregúntale al asistente: <i>'¿Qué sonido hace el elefante?'</i> y escucha."}, 
+  v:"google assistant para niños trucos"},
+ {t:"Semana 8: Proyecto Final", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar todo lo aprendido (Enfoque, Luz y Cuidado) para crear un recuerdo digital.</p><p><strong>📖 Explicación:</strong><br>Hoy seremos fotógrafos profesionales. No tomaremos una foto rápida; tomaremos una foto <b>pensada</b>. Cuidaremos que no esté borrosa, que tenga luz y que el celular esté seguro.</p><p><strong>🛠️ Manos a la obra (Instrucciones):</strong><br>1. Trae tu juguete favorito.<br>2. Busca un lugar con buena luz (cerca de la ventana).<br>3. Limpia el lente de tu cámara con el pañito.<br>4. Sostén el celular con dos manos, enfoca tocando la pantalla y dispara.</p>", 
+  a1:{t:"El Fotógrafo", d:"Muestra tu foto al profesor. Debe estar nítida y con luz."}, 
+  a2:{t:"Galería de Arte", d:"(Evaluación) Si hay proyector, mostraremos las fotos de todos y explicaremos por qué elegimos ese juguete."}, 
+  v:"tips fotografia movil niños"}
+];
+
+// === GRADO 2 ===
+const g2_b1 = [
+ {t:"Semana 1: Iconos, Apps y Orden", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Diferenciar aplicaciones y organizar nuestra pantalla de inicio.</p><p><strong>📖 Explicación:</strong><br>Tu pantalla es como tu pupitre. Si está desordenada, no encuentras nada.<br><b>Iconos:</b> Son los cuadritos pequeños (Apps).<br><b>Widgets:</b> Son los cuadros grandes que muestran información (como el reloj grande).<br>Podemos moverlos para tener todo ordenado.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Mantén el dedo presionado sobre un ícono hasta que vibre o se mueva.<br>2. Sin soltar el dedo, arrástralo a otro lugar.<br>3. Intenta juntar todas las apps de juegos en una esquina.</p>", 
+  a1:{t:"El Organizador", d:"Mueve todos los juegos a una página y las apps de estudio a otra página distinta."}, 
+  a2:{t:"Reto de Color", d:"Intenta agrupar 4 iconos que sean del mismo color (ej: WhatsApp, Teléfono y Mapas son verdes)."}, 
+  v:"organizar pantalla inicio android"},
+ {t:"Semana 2: La Captura (Screenshot)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Tomar una foto de lo que está pasando en nuestra pantalla.</p><p><strong>📖 Explicación:</strong><br>A veces ves algo en internet o una tarea y quieres guardarla rápido. Para eso sirve el 'Screenshot'. Es como si el celular se tomara una selfie a sí mismo.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Identifica los botones.<br>2. Presiona <b>Apagar + Bajar Volumen</b> al mismo tiempo (¡Clic!).<br>3. Verás un parpadeo en la pantalla. ¡Ya la capturaste!<br>4. Ve a tu Galería para verla.</p>", 
+  a1:{t:"Reto Visual", d:"El profesor pondrá una imagen bonita en la pizarra digital. Tú debes capturarla con tu cámara y LUEGO hacerle captura de pantalla a esa foto."}, 
+  a2:{t:"Recorte Rápido", d:"Toma una captura de una página web y usa la herramienta de edición inmediata para recortar solo el título."}, 
+  v:"como hacer captura de pantalla"},
+ {t:"Semana 3: Grabadora de Voz", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar el micrófono para grabar tareas, entrevistas o ideas.</p><p><strong>📖 Explicación:</strong><br>A veces es más rápido hablar que escribir. La grabadora de voz nos permite guardar sonidos. Los periodistas usan esto para entrevistar personas. Hoy seremos periodistas.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Busca la app 'Grabadora'.<br>2. Presiona el botón rojo 🔴 para empezar.<br>3. Habla cerca del micrófono (en la parte de abajo del cel).<br>4. Presiona el cuadrado ⏹️ para terminar y ponle nombre a tu audio.</p>", 
+  a1:{t:"Locutor de Radio", d:"Graba un mensaje de bienvenida: 'Hola, estás escuchando la radio de 2do grado'. Escúchalo después."}, 
+  a2:{t:"Adivina el Sonido", d:"Graba un sonido misterioso (golpear la mesa, cerrar un libro) y haz que tu amigo adivine qué es solo escuchando."}, 
+  v:"usar grabadora voz celular"},
+ {t:"Semana 4: Fotos con Temporizador", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Tomar fotos donde nosotros también salgamos sin tener el celular en la mano.</p><p><strong>📖 Explicación:</strong><br>¿Quieres salir en la foto familiar pero nadie puede tomar la foto? Usa el <b>Temporizador</b>. Es un reloj de cuenta atrás (3, 2, 1...) que te da tiempo de correr y ponerte en la foto.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre la cámara.<br>2. Busca el ícono de un relojito ⏱️. Elige '5 segundos'.<br>3. Apoya el celular en un lugar seguro (contra unos libros).<br>4. Presiona el botón y corre a posar.</p>", 
+  a1:{t:"Selfie sin Manos", d:"Pon el temporizador, apoya el celular y posa saludando con ambas manos (demostrando que no tocas el cel)."}, 
+  a2:{t:"Foto Grupal", d:"Júntate con 2 amigos. Pongan el cel lejos y traten de salir los 3 en la foto haciendo una mueca divertida."}, 
+  v:"como usar temporizador camara celular"},
+ {t:"Semana 5: El Reloj (Alarmas y Cronómetro)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar el celular para medir nuestro tiempo de estudio.</p><p><strong>📖 Explicación:</strong><br>El celular tiene un reloj muy poderoso.<br><b>Alarma:</b> Para despertar o recordar algo importante.<br><b>Cronómetro:</b> Para medir cuánto tardamos en correr o hacer la tarea.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre la app Reloj.<br>2. Ve a 'Cronómetro' y dale 'Iniciar'.<br>3. Escribe en tu cuaderno los números del 1 al 20.<br>4. Dale 'Pausar' cuando termines. ¿Cuánto tardaste?</p>", 
+  a1:{t:"Carrera de Números", d:"Usa el cronómetro. Intenta escribir tu nombre completo en menos de 10 segundos."}, 
+  a2:{t:"El Recordatorio", d:"Configura una alarma para dentro de 2 minutos. Sigue trabajando hasta que suene y te avise."}, 
+  v:"app reloj android niños"},
+ {t:"Semana 6: Calculadora Trucada", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar la calculadora para VERIFICAR (no para hacer trampa).</p><p><strong>📖 Explicación:</strong><br>La calculadora es una herramienta inteligente. No la usamos para que haga la tarea por nosotros, sino para <b>comprobar</b> si nuestra mente hizo bien la cuenta. Es como un juez.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Escribe en tu cuaderno: 15 + 15 = ?<br>2. Resuélvelo con tu mente.<br>3. Abre la Calculadora en el celular.<br>4. Escribe 15 + 15 y dale al igual (=). ¿Te salió lo mismo?</p>", 
+  a1:{t:"Profe Digital", d:"El profesor pondrá 3 sumas. Resuélvelas y ponte un 'chequecito' ✅ o una 'X' usando la calculadora del celular para corregirte."}, 
+  a2:{t:"Cifras Grandes", d:"Escribe tu año de nacimiento y súmale el año actual. ¿Qué número sale? (Curiosidad matemática)."}, 
+  v:"trucos calculadora celular"},
+ {t:"Semana 7: Dictado por Voz", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Dictarle al celular para que escriba por nosotros.</p><p><strong>📖 Explicación:</strong><br>¿Te cansaste de escribir con los dedos? El teclado tiene un micrófono pequeño. Si lo tocas y hablas claro y despacio, ¡el celular escribe lo que dices! Se llama <b>Dictado por voz</b>.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre la app de Notas.<br>2. Saca el teclado. Busca el micrófono chiquito 🎙️.<br>3. Tócalo y di: 'Hola, soy un estudiante inteligente'.<br>4. Mira cómo aparecen las letras mágicamente.</p>", 
+  a1:{t:"Carta Hablada", d:"Dicta un mensaje corto para tu mejor amigo. Revisa si escribió bien su nombre."}, 
+  a2:{t:"Trabalenguas", d:"Intenta dictarle un trabalenguas al celular (ej: 'Pablito clavó un clavito'). ¿Lo escribió bien o se equivocó?"}, 
+  v:"dictado por voz google docs"},
+ {t:"Semana 8: Proyecto Reportero", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar cámara, micrófono y postura para entrevistar.</p><p><strong>📖 Explicación:</strong><br>Un reportero usa su dispositivo para informar al mundo. Hoy serás uno. Tienes que grabar una mini-entrevista a un compañero usando todo lo que aprendiste (cámara estable y voz clara).</p><p><strong>🛠️ Manos a la obra (Instrucciones):</strong><br>1. Elige a un compañero.<br>2. Hazle una pregunta interesante (Ej: '¿Cuál es tu comida favorita y por qué?').<br>3. Sostén el celular firme con las dos manos.<br>4. Graba la respuesta en video.</p>", 
+  a1:{t:"La Entrevista", d:"Graba el video y muéstralo. Debe escucharse bien la voz del entrevistado."}, 
+  a2:{t:"Edición Simple", d:"Si te animas, usa el editor de la galería para recortar el principio y el final del video donde no hablan."}, 
+  v:"periodismo para niños escolar"}
+];
+
+// === GRADO 3 ===
+const g3_b1 = [
+ {t:"Semana 1: Carpetas y Álbumes", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Organizar nuestra galería para no tener un desorden de fotos y encontrar las tareas rápido.</p><p><strong>📖 Explicación:</strong><br>Imagina que tiras todos tus cuadernos, juguetes y ropa en una sola pila gigante en el suelo. ¡Sería imposible encontrar algo! Lo mismo pasa en tu celular. La 'Galería' es como tu cuarto, y los <b>Álbumes</b> son los cajones donde guardamos cada cosa en su lugar.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Entra a la Galería.<br>2. Busca la pestaña 'Álbumes'.<br>3. Toca el signo de más (+).<br>4. Escribe el nombre: 'ESCUELA'.<br>5. Selecciona las fotos de tareas y muévelas ahí.</p>", 
+  a1:{t:"El Clasificador", d:"Tienes 2 minutos para crear el álbum 'ESCUELA' y mover al menos 5 fotos de tareas antiguas ahí."}, 
+  a2:{t:"Vida Personal", d:"Crea un álbum llamado 'FAMILIA' y mueve ahí las fotos de tus papás, hermanos o mascotas."}, 
+  v:"organizar galeria android"},
+ {t:"Semana 2: Edición I (Recortar)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Arreglar fotos que salieron chuecas o donde sobra espacio.</p><p><strong>📖 Explicación:</strong><br>A veces tomamos la foto y sale la mesa, el zapato del compañero o la hoja sale torcida. No podemos enviar eso al profesor; se ve desordenado. Usaremos la herramienta <b>Recortar</b> para quitar lo que sobra, como si usáramos tijeras digitales.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre una foto cualquiera.<br>2. Toca el botón 'Editar' ✏️.<br>3. Busca el ícono de Recortar.<br>4. Mueve las esquinas hacia adentro para quitar lo que sobra.<br>5. Usa la ruedita de abajo para enderezar.</p>", 
+  a1:{t:"Cirugía de Foto", d:"Toma una foto de tu libro 'a propósito' muy chueca y donde salga tu pie. Luego edítala hasta que solo se vea el texto del libro, recto y perfecto."}, 
+  a2:{t:"Formato Cuadrado", d:"Recorta una foto tuya en formato '1:1' (Cuadrado perfecto) como las que se usan en las fotos de perfil."}, 
+  v:"como recortar fotos en celular"},
+ {t:"Semana 3: Edición II (Brillo)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Aclarar fotos oscuras para que se lean bien.</p><p><strong>📖 Explicación:</strong><br>Si tomas una foto en la tarde o lejos de la ventana, sale oscura. El profesor no tiene ojos de gato, así que necesitamos 'encender la luz' de la foto <i>después</i> de haberla tomado.<br><b>Brillo:</b> Sube la luz general.<br><b>Contraste:</b> Hace que las letras negras se vean más negras y el papel más blanco.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Ve a Editar ✏️ > Ajustes (ícono de un sol).<br>2. Sube el Brillo hasta que se vea clara.<br>3. Sube un poco el Contraste.<br>4. ¡Mira la diferencia!</p>", 
+  a1:{t:"Rescate Fotográfico", d:"Toma una foto debajo de tu escritorio (donde está oscuro). Usa las herramientas para que parezca que la tomaste con la luz encendida."}, 
+  a2:{t:"Filtros Mágicos", d:"Prueba poner la foto en 'Blanco y Negro' usando los filtros del editor para darle un toque artístico."}, 
+  v:"editar brillo fotos celular"},
+ {t:"Semana 4: Marcado en Fotos", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Escribir o dibujar sobre una foto para señalar algo importante.</p><p><strong>📖 Explicación:</strong><br>A veces necesitas rodear una respuesta en una foto o poner una flecha para que el profesor vea algo específico. No necesitas imprimir la foto para rayarla con marcador, ¡puedes hacerlo digitalmente!</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Ve a Editar ✏️ > Garabato / Lápiz / Marcado.<br>2. Elige un color llamativo (Rojo es el mejor para corregir).<br>3. Dibuja con tu dedo sobre la foto.</p>", 
+  a1:{t:"El Maestro", d:"Toma una foto a un dibujo de tu libro. Usa la herramienta de marcado para rodear con un círculo rojo la parte más importante."}, 
+  a2:{t:"Firma Digital", d:"Toma una foto a tu tarea y escribe tu nombre encima de la hoja usando el lápiz digital de colores."}, 
+  v:"dibujar sobre fotos android"},
+ {t:"Semana 5: Google Lens", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar la cámara para investigar cosas que no sabemos cómo se llaman.</p><p><strong>📖 Explicación:</strong><br>Google Lens es como un ojo inteligente o una lupa mágica. Tú le muestras algo (una flor, un perro, un zapato) y él busca en internet qué es. ¡Ya no necesitas escribir para buscar!</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Busca el ícono de <b>Lens</b> (una camarita de colores) en la barra de Google o en tu cámara.<br>2. Apunta a un objeto desconocido.<br>3. Toca la lupa 🔍 para buscar.<br>4. Lee los resultados.</p>", 
+  a1:{t:"Investigador Natural", d:"Sal al patio, escanea una planta u hoja con Lens. ¿Cómo se llama según Google?"}, 
+  a2:{t:"Traductor Visual", d:"Escanea un texto en inglés de un libro y usa el botón 'Traducir' de Lens para leerlo en español."}, 
+  v:"trucos google lens estudiantes"},
+ {t:"Semana 6: Checklists (Listas)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Hacer listas de tareas que podemos ir marcando.</p><p><strong>📖 Explicación:</strong><br>¿Olvidas tus tareas o lo que tienes que llevar a la escuela? Las <b>Listas de Verificación</b> son listas inteligentes con una cajita al lado. Cuando terminas algo, tocas la cajita y se marca. ¡Es muy satisfactorio!</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre Google Keep o Notas.<br>2. Busca el ícono de 'Casillas de verificación' ☑️.<br>3. Escribe 3 cosas que debes hacer hoy.<br>4. Toca la casilla cuando lo cumplas.</p>", 
+  a1:{t:"La Mochila", d:"Haz una lista de lo que llevas hoy en la mochila (lápiz, cuaderno, agua). Revisa tu mochila real y ve marcando en el celular si lo tienes."}, 
+  a2:{t:"Lista de Compras", d:"Haz una lista de 5 cosas que te gustaría comprar en la tienda. Ordénalas por prioridad."}, 
+  v:"google keep listas verificacion"},
+ {t:"Semana 7: Compartir (Bluetooth)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Pasar archivos a compañeros cercanos sin usar internet.</p><p><strong>📖 Explicación:</strong><br>¿Qué pasa si no hay WiFi y necesitas pasarle la tarea a tu amigo? Podemos usar <b>Bluetooth</b> o <b>QuickShare</b>. Es como lanzar el archivo por el aire al celular de al lado. Es magia invisible.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre una foto.<br>2. Toca el ícono 'Compartir'.<br>3. Elige 'Bluetooth'.<br>4. Tu compañero debe tenerlo activado también. Toca su nombre para enviar.</p>", 
+  a1:{t:"Pasar la Bola", d:"En parejas, pásense la mejor foto que hayan editado esta semana usando solo Bluetooth."}, 
+  a2:{t:"Recepción", d:"Aprende a 'Aceptar' un archivo cuando alguien te lo envía. Revisa dónde se guardó en tu celular."}, 
+  v:"compartir archivos bluetooth android"},
+ {t:"Semana 8: Proyecto Tutorial", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Demostrar nuestras habilidades de edición transformando una foto mala en una buena.</p><p><strong>📖 Explicación:</strong><br>Vas a enseñar cómo convertir una foto 'fea' en una foto 'profesional'. Eres el experto en edición.</p><p><strong>🛠️ Manos a la obra (Instrucciones):</strong><br>1. Toma una foto 'mala' a propósito (chueca, oscura y lejana).<br>2. Duplica la foto para tener el 'Antes'.<br>3. Edita la copia: Recorta lo que sobra, enderezala, sube el brillo y fírmala con marcado. Esa es el 'Después'.</p>", 
+  a1:{t:"Antes y Después", d:"Muestra las dos fotos en tu celular al profesor y explica el cambio."}, 
+  a2:{t:"Explicación Oral", d:"Pasa al frente y explica a la clase qué herramientas usaste (Ej: 'Usé recorte para quitar el zapato y brillo para la luz')."}, 
+  v:"tutorial edicion fotos basica"}
+];
+  // === GRADO 4 ===
+const g4_b1 = [
+ {t:"Semana 1: Video Estable", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Grabar videos que no mareen a quien los ve.</p><p><strong>📖 Explicación:</strong><br>Un video donde la cámara se mueve mucho marea y se ve mal. Como no tenemos trípode, ¡convertiremos nuestro cuerpo en uno!</p><p><strong>Técnica T-Rex:</strong><br>Pega los codos a tus costillas. Sostén el celular con ambas manos cerca del pecho. Gira con la cintura, no con los brazos.</p>", 
+  a1:{t:"El Cineasta", d:"Graba un recorrido de 10 segundos por el aula caminando suavemente sin que la imagen tiemble."}, 
+  a2:{t:"Paneo Suave", d:"Quédate quieto en un lugar y gira solo la cintura para grabar de izquierda a derecha lentamente (un paneo)."}, 
+  v:"grabar video estable con celular"},
+ {t:"Semana 2: Escaneo PDF", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Convertir hojas de papel en archivos PDF digitales.</p><p><strong>📖 Explicación:</strong><br>Una foto es una imagen (.JPG). Un documento es un papel digital (.PDF). Los profesores prefieren PDF porque se ven planos, blancos y limpios.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre Google Drive en el cel.<br>2. Toca el '+' y luego 'Escanear' 📷.<br>3. Toma la foto del documento. La app recortará los bordes y pondrá la hoja blanca.</p>", 
+  a1:{t:"Digitalizar", d:"Convierte 2 páginas de tu cuaderno en un solo archivo PDF usando Drive."}, 
+  a2:{t:"Control de Calidad", d:"Abre el PDF que creaste. Si se ve borroso, bórralo e inténtalo de nuevo con mejor luz."}, 
+  v:"escanear documentos google drive"},
+ {t:"Semana 3: Gmail en el Celular", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Enviar tareas por correo electrónico de forma correcta y profesional.</p><p><strong>📖 Explicación:</strong><br>Enviar un correo no es chatear por WhatsApp. Tiene partes formales:<br><b>Para:</b> El correo del profe.<br><b>Asunto:</b> El título del correo. ¡Nunca lo dejes vacío!<br><b>Cuerpo:</b> El mensaje.<br><b>Adjuntar (Clip 📎):</b> Pegar tu archivo PDF.</p>", 
+  a1:{t:"El Envío", d:"Redacta un correo con asunto 'Prueba', escribe un saludo y adjunta el PDF que escaneaste."}, 
+  a2:{t:"Respuesta", d:"Si el profe te responde, aprende a usar el botón 'Responder' para contestar 'Gracias'."}, 
+  v:"como enviar correo gmail celular"},
+ {t:"Semana 4: Búsqueda Inteligente", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Buscar en Google como un detective experto.</p><p><strong>📖 Explicación:</strong><br>Si buscas 'Jirafas' salen millones de cosas. ¿Y si quieres solo 'Dibujos'? ¿O noticias de ayer? Usaremos los <b>Filtros</b>. Los filtros ayudan a limpiar la basura y dejar solo lo que nos sirve.</p><p><strong>🛠️ Manos a la obra:</strong><br>Busca un tema. Mueve la barrita de arriba: Toca <b>Imágenes</b>, <b>Noticias</b> o <b>Herramientas > Fecha</b>.</p>", 
+  a1:{t:"Investigador", d:"Busca 'Volcanes' y usa el filtro de 'Noticias' y 'Última semana' para ver si alguno hizo erupción hace poco."}, 
+  a2:{t:"Solo Imágenes", d:"Busca 'Sistema Solar' y ve a Imágenes > Herramientas > Tipo > Dibujo lineal (para colorear)."}, 
+  v:"trucos busqueda google estudiantes"},
+ {t:"Semana 5: Traductor (Cámara)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Entender otros idiomas usando el celular como herramienta.</p><p><strong>📖 Explicación:</strong><br>Google Translate es un superpoder.<br><b>Cámara:</b> Traduce carteles o menús en tiempo real. ¡Las letras cambian frente a tus ojos!<br><b>Conversación:</b> Tú hablas español y el celular lo dice en inglés (y al revés).</p>", 
+  a1:{t:"Magia en Vivo", d:"Apunta con la cámara del traductor a la portada de tu libro de inglés y mira cómo cambia a español."}, 
+  a2:{t:"Charla", d:"Usa el modo 'Conversación' (micrófono doble) con un amigo. Uno habla español, el otro inglés."}, 
+  v:"usar camara traductor google"},
+ {t:"Semana 6: Mapas y Ubicación", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Ubicarnos en el espacio y medir distancias reales.</p><p><strong>📖 Explicación:</strong><br>Google Maps es el mapa del mundo entero. Podemos ver dónde estamos, ver fotos de lugares lejanos (Street View) y medir qué tan lejos están las cosas.</p><p><strong>🛠️ Manos a la obra:</strong><br>Abre Maps. Mantén presionado el mapa para poner un pin rojo. Busca la opción 'Medir distancia' y arrastra.</p>", 
+  a1:{t:"Regla Gigante", d:"Mide la distancia exacta en kilómetros desde la escuela hasta tu casa (o el parque)."}, 
+  a2:{t:"Street View", d:"Usa el muñequito naranja para 'caminar' virtualmente por una calle de París o Nueva York."}, 
+  v:"trucos google maps medir distancia"},
+ {t:"Semana 7: Código QR", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Leer los códigos cuadrados y crear uno propio.</p><p><strong>📖 Explicación:</strong><br>Esos cuadros con puntos negros son atajos secretos. La cámara los lee y te lleva a una página web o te muestra un mensaje oculto. Hoy no solo los leeremos, ¡crearemos uno!</p><p><strong>🛠️ Manos a la obra:</strong><br>Leer: Usa tu cámara o Google Lens. Crear: Usaremos una web para escribir un mensaje y convertirlo en QR.</p>", 
+  a1:{t:"Mensaje Secreto", d:"Crea un QR que contenga un saludo para tu mejor amigo. Muéstraselo en tu pantalla para que él lo escanee."}, 
+  a2:{t:"El Escáner", d:"Busca un QR en algún producto (caja de cereal, libro) y escanéalo para ver a dónde te lleva."}, 
+  v:"crear codigo qr celular"},
+ {t:"Semana 8: Video Reporte", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Crear un video educativo combinando todo lo aprendido.</p><p><strong>📖 Explicación:</strong><br>Vamos a grabar un video corto explicando un tema de ciencias o sociales. No es un video de broma, es un video educativo. Usaremos la técnica T-Rex y hablaremos claro.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Elige un tema sencillo (Ej: 'Las partes de una planta').<br>2. Prepara tu 'set' (busca buena luz).<br>3. Graba explicando el tema en 1 minuto.</p>", 
+  a1:{t:"Acción", d:"Graba el video y preséntalo. Se evaluará que no tiemble la imagen y que se escuche tu voz."}, 
+  a2:{t:"Revisión Final", d:"Antes de entregar, mira tu video. Si hay mucho ruido de fondo, grábalo de nuevo en un lugar silencioso."}, 
+  v:"hablar frente a camara tips niños"}
+];
+
+// === GRADO 5 ===
+const g5_b1 = [
+ {t:"Semana 1: Google Drive", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Entender qué es la 'Nube' y cómo respaldar nuestra información.</p><p><strong>📖 Explicación:</strong><br>Si tu celular se pierde, se rompe o se cae al agua, ¿pierdes todas tus fotos y tareas? Si las guardas en 'La Nube' (Google Drive), <b>NO</b>. La nube es como una memoria USB gigante y segura que flota en internet.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre Drive. 2. Toca '+'. 3. Subir. 4. Elige un archivo.</p>", 
+  a1:{t:"Respaldo", d:"Sube una foto importante a Drive. Luego, bórrala de la galería de tu celular (con valentía). Abre Drive y demuestra que la foto sigue viva ahí."}, 
+  a2:{t:"Offline", d:"Selecciona un archivo en Drive y activa la opción 'Disponible sin conexión' para poder verlo cuando no tengas WiFi."}, 
+  v:"google drive sin conexion tutorial"},
+ {t:"Semana 2: Carpetas Compartidas", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Trabajar en equipo sin necesidad de estar juntos físicamente.</p><p><strong>📖 Explicación:</strong><br>En la nube, puedes crear una carpeta y 'darle la llave' a un amigo. Todo lo que tú pongas ahí, él lo verá en su celular al instante.</p><p><strong>Roles:</strong><br><b>Editor:</b> Puede borrar y poner cosas.<br><b>Lector:</b> Solo puede ver y descargar.</p>", 
+  a1:{t:"Colaboración", d:"En parejas, creen una carpeta compartida. Ambos deben subir una foto distinta a esa misma carpeta desde sus celulares."}, 
+  a2:{t:"Permisos", d:"Aprende a quitarle el acceso a alguien (Eliminar usuario) cuando termina el trabajo."}, 
+  v:"compartir carpetas google drive"},
+ {t:"Semana 3: Google Calendar", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Organizar nuestro tiempo y nunca olvidar una tarea o examen.</p><p><strong>📖 Explicación:</strong><br>Tu cerebro no puede recordarlo todo, pero tu celular sí. Usaremos el Calendario para <b>agendar el futuro</b>. El calendario nos enviará una notificación antes del evento para que no nos tome por sorpresa.</p>", 
+  a1:{t:"La Agenda", d:"Programa todas las fechas de entrega importantes de este mes en tu calendario. Ponles color ROJO a los exámenes."}, 
+  a2:{t:"Alerta", d:"Configura un recordatorio para un evento que suene '1 día antes' y '1 hora antes'."}, 
+  v:"google calendar tutorial español"},
+ {t:"Semana 4: Contraseñas Seguras", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Crear contraseñas fuertes que los hackers no puedan adivinar.</p><p><strong>📖 Explicación:</strong><br>'123456', tu fecha de nacimiento o el nombre de tu perro <b>NO</b> son contraseñas seguras. Una buena contraseña es como una ensalada: Tiene Mayúsculas, minúsculas, números y símbolos raros.</p><p><strong>Truco:</strong> Usa una frase loca. Ej: 'MeGustaComerPizzaALas3!'.</p>", 
+  a1:{t:"Fortaleza", d:"Inventa una contraseña 'Mnemotécnica' (basada en una frase) y escríbela en un papel secreto que guardarás en casa."}, 
+  a2:{t:"Verificación", d:"Entra a un sitio web de 'Password Strength' y prueba qué tan fuerte es tu contraseña (sin usar la real)."}, 
+  v:"crear contraseñas seguras"},
+ {t:"Semana 5: Widgets", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Personalizar la pantalla de inicio para ser más rápidos y eficientes.</p><p><strong>📖 Explicación:</strong><br>Un <b>Widget</b> es una 'mini-app' que vive en tu pantalla de inicio. Te deja ver el calendario o tus notas sin tener que abrir la aplicación. Ahorra mucho tiempo.</p><p><strong>🛠️ Manos a la obra:</strong><br>Mantén presionado el fondo de pantalla > Widgets > Busca Calendar o Drive > Arrástralo.</p>", 
+  a1:{t:"Acceso Rápido", d:"Agrega el Widget de Calendar grande a tu pantalla principal para ver tu agenda siempre."}, 
+  a2:{t:"Lista a la Vista", d:"Agrega el Widget de Google Keep (Notas) para ver tu lista de tareas pendientes sin abrir la app."}, 
+  v:"mejores widgets productividad android"},
+ {t:"Semana 6: Fake News", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> No creer todo lo que vemos en internet. Verificar la verdad.</p><p><strong>📖 Explicación:</strong><br>Cualquiera puede escribir en internet. Debemos ser detectives para saber si es verdad. Si una noticia es demasiado sorprendente o te da mucho miedo, ¡duda!</p><ul><li><b>¿Quién lo escribió?</b> (Autor).</li><li><b>¿Cuándo?</b> (Fecha).</li><li><b>¿Otras páginas dicen lo mismo?</b></li></ul>", 
+  a1:{t:"El Detective", d:"Busca una noticia 'rara' (ej: Animales que llueven). Investiga en 2 webs distintas si es Verdadera o Falsa y explica por qué."}, 
+  a2:{t:"Fuente", d:"Aprende a identificar si una web es seria (Revisa la sección 'Quiénes somos' o busca la fecha de la noticia)."}, 
+  v:"identificar fake news niños"},
+ {t:"Semana 7: Comentarios Docs", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Corregir trabajos de compañeros de forma digital y amable.</p><p><strong>📖 Explicación:</strong><br>En lugar de tachar con rojo o borrar lo que hizo tu amigo, en digital usamos <b>Comentarios</b>. Así tu amigo puede ver qué cambiar sin que le arruines su documento.</p><p><strong>🛠️ Manos a la obra:</strong><br>Selecciona una palabra > Toca el ícono '+' de comentario > Escribe tu sugerencia.</p>", 
+  a1:{t:"El Editor", d:"Revisa el texto de un compañero. Déjale al menos 2 comentarios constructivos (uno de corrección y uno de felicitación)."}, 
+  a2:{t:"Resolver", d:"Aprende a marcar un comentario como 'Resuelto' (Check ✅) cuando ya hiciste la corrección que te pidieron."}, 
+  v:"comentarios google docs tutorial"},
+ {t:"Semana 8: Proyecto Organizador", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Demostrar que dominamos nuestra oficina digital.</p><p><strong>📖 Explicación:</strong><br>Vas a mostrar cómo tu celular ha dejado de ser un juguete y ahora es una herramienta de trabajo. Tu 'Ecosistema Digital' debe estar limpio y listo.</p>", 
+  a1:{t:"Exposición", d:"Muestra tus carpetas de Drive ordenadas por materia y tu Calendario lleno de eventos futuros."}, 
+  a2:{t:"Limpieza Final", d:"Elimina archivos descargados (carpeta Downloads) que ya no sirvan para dejar el celular limpio y rápido."}, 
+  v:"organizacion digital estudiantes"}
+];
+
+// === GRADO 6 ===
+const g6_b1 = [
+ {t:"Semana 1: Multitarea", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Hacer dos cosas a la vez (de verdad) en el celular.</p><p><strong>📖 Explicación:</strong><br>Los celulares modernos pueden partir la pantalla en dos (Split Screen). Puedes ver un video arriba y tomar notas abajo. ¡Ya no tienes que pausar y cambiar de app a cada rato!</p><p><strong>🛠️ Manos a la obra:</strong><br>Abre una app > Vista recientes (cuadrado) > Toca el ícono de la app > Pantalla dividida > Elige la segunda app.</p>", 
+  a1:{t:"Apuntes en Vivo", d:"Pon un video educativo arriba. Abre Notas abajo. Escribe 3 ideas principales sin detener el video."}, 
+  a2:{t:"Comparador", d:"Abre Chrome arriba y la Calculadora abajo. Busca precios de computadoras en una web y calcula el promedio abajo."}, 
+  v:"pantalla dividida android tutorial"},
+ {t:"Semana 2: Firmar PDF", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Llenar formularios y firmar documentos sin imprimir nada.</p><p><strong>📖 Explicación:</strong><br>En la vida adulta te mandarán documentos para firmar. Imprimir, firmar, escanear y enviar es cosa del pasado. Puedes hacerlo directo en la pantalla con tu dedo usando el editor de Drive o Adobe.</p>", 
+  a1:{t:"El Trámite", d:"El profesor enviará una 'Ficha de Inscripción' falsa. Llena tus datos con texto y crea tu firma con el dedo en la línea final."}, 
+  a2:{t:"Guardado", d:"Guarda el documento como 'Copia Firmada' para no perder el original vacío. Envíalo."}, 
+  v:"firmar pdf celular gratis"},
+ {t:"Semana 3: Bienestar Digital", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Controlar el celular y no que el celular nos controle a nosotros.</p><p><strong>📖 Explicación:</strong><br>¿Sabes cuántas horas pasas en TikTok o Juegos? El celular lleva la cuenta secreta. Vamos a analizarlo para cuidar nuestra salud mental y vista. Un profesional sabe cuándo desconectarse.</p><p><strong>🛠️ Manos a la obra:</strong><br>Ve a Ajustes > Bienestar Digital o Tiempo de Pantalla. Mira el gráfico.</p>", 
+  a1:{t:"La Auditoría", d:"Analiza tus datos. Anota en un papel cuánto tiempo pasaste ayer en el celular. ¿Fue mucho o poco?"}, 
+  a2:{t:"El Límite", d:"Configura un bloqueo real (Temporizador) de 30 min para un juego. Cuando se acabe el tiempo, la app se cerrará sola."}, 
+  v:"bienestar digital android explicacion"},
+ {t:"Semana 4: OCR (Texto a Digital)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Copiar texto de un libro de papel y pegarlo en el celular mágicamente.</p><p><strong>📖 Explicación:</strong><br>Imagina tener que copiar a mano 2 páginas de un libro. ¡Qué cansado! <b>OCR</b> es la tecnología que 'lee' el papel y lo convierte en letras digitales que puedes editar. Usaremos Google Lens.</p><p><strong>🛠️ Manos a la obra:</strong><br>Abre Lens y apunta a una página de texto. Toca 'Texto' y luego 'Seleccionar todo'. Copia y pega en Docs.</p>", 
+  a1:{t:"Digitalizador", d:"Copia un poema de un libro físico y pégalo en un Doc digital en segundos. Arregla los espacios si quedaron mal."}, 
+  a2:{t:"Lector en Voz Alta", d:"Usa la opción 'Escuchar' de Lens para que el celular te lea la página del libro en voz alta."}, 
+  v:"copiar texto imagen google lens"},
+ {t:"Semana 5: Presentar desde Móvil", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Usar el celular para exponer en una TV o proyector.</p><p><strong>📖 Explicación:</strong><br>Ya no necesitas una computadora gigante para exponer. Puedes conectar tu celular a la TV o usarlo como control remoto de tus diapositivas.</p><p><strong>Modo Presentador:</strong><br>Tú ves tus notas secretas en el celular, pero el público solo ve las fotos en la pantalla grande.</p>", 
+  a1:{t:"El Expositor", d:"Pasa al frente y expón un tema de 1 minuto usando solo tu celular para pasar las láminas."}, 
+  a2:{t:"Notas del Orador", d:"Aprende a activar las 'Notas del orador' para leer tus apuntes en el celular mientras expones."}, 
+  v:"presentar diapositivas google desde celular"},
+ {t:"Semana 6: Edición Video Pro", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Crear videos atractivos eliminando las partes aburridas.</p><p><strong>📖 Explicación:</strong><br>Un buen video no es largo, es interesante. Usaremos una app profesional (CapCut o InShot) para usar <b>Cortes (Split)</b> y eliminar los silencios incómodos o errores.</p><p><strong>Audio:</strong> La música de fondo debe bajar de volumen cuando tú hablas y subir cuando te callas.</p>", 
+  a1:{t:"Tutorial Express", d:"Crea un video de 30 segundos sobre 'Cómo hacer un avión de papel'. Debe tener música de fondo y cortes rápidos."}, 
+  a2:{t:"Banda Sonora", d:"Practica mezclar el audio. Baja la música al 10% cuando hables para que se entienda tu voz."}, 
+  v:"editar video capcut basico"},
+ {t:"Semana 7: Netiqueta", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comportarnos como profesionales en chats y correos.</p><p><strong>📖 Explicación:</strong><br>Escribir 'kmo stas' está bien para amigos, pero mal para el trabajo. <b>Netiqueta</b> son las reglas de educación en internet. Aprenderemos a escribir correos formales con Saludo, Cuerpo y Despedida.</p>", 
+  a1:{t:"Simulacro Formal", d:"Escribe un correo al director pidiendo permiso para faltar por una cita médica. Usa lenguaje muy educado."}, 
+  a2:{t:"Corrector", d:"Corrige este mensaje mal escrito: 'Ola profe k tarea ay pa mañana'. Escríbelo como un profesional."}, 
+  v:"netiqueta estudiantes ejemplos"},
+ {t:"Semana 8: Oficina de Bolsillo", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Resolver problemas reales bajo presión usando tecnología.</p><p><strong>📖 Explicación:</strong><br>Este es el examen final práctico. Simularás ser un profesional que debe resolver un trámite urgente usando solo su teléfono.</p><p><strong>🛠️ Manos a la obra (Misión):</strong><br>'Te acaban de enviar un contrato por correo. Debes descargarlo, firmarlo, adjuntar una foto de tu carnet (bien recortada) y devolverlo antes de 10 minutos'.</p>", 
+  a1:{t:"Reto Final", d:"Realiza la misión en tiempo real. Se evaluará que el PDF esté firmado y que el correo tenga asunto y saludo."}, 
+  a2:{t:"Revisión Cruzada", d:"Revisa el correo que envió tu compañero. ¿Llegó el adjunto? ¿Está firmado? ¿Escribió bien el correo?"}, 
+  v:"productividad movil estudiantes"}
+];
+
+// --- ESTRUCTURA PRINCIPAL ---
+const appData = [
+ {id:"g1",t:"1ro Primaria",s:"Iniciación",b:[{t:"Bimestre 1",s:"Mi Oficina Móvil",l:false,w:g1_b1},{t:"Bimestre 2",s:"Nube y Docs",l:true,w:[]},{t:"Bimestre 3",s:"Canva Kids",l:true,w:[]},{t:"Bimestre 4",s:"IA",l:true,w:[]}]},
+ {id:"g2",t:"2do Primaria",s:"Explorador",b:[{t:"Bimestre 1",s:"Interfaz",l:false,w:g2_b1},{t:"Bimestre 2",s:"Escritura",l:true,w:[]},{t:"Bimestre 3",s:"Artista",l:true,w:[]},{t:"Bimestre 4",s:"IA Voz",l:true,w:[]}]},
+ {id:"g3",t:"3ro Primaria",s:"Creador",b:[{t:"Bimestre 1",s:"Edición",l:false,w:g3_b1},{t:"Bimestre 2",s:"Docs Pro",l:true,w:[]},{t:"Bimestre 3",s:"Slides",l:true,w:[]},{t:"Bimestre 4",s:"IA Tools",l:true,w:[]}]},
+ {id:"g4",t:"4to Primaria",s:"Multimedia",b:[{t:"Bimestre 1",s:"Video",l:false,w:g4_b1},{t:"Bimestre 2",s:"Ofimática",l:true,w:[]},{t:"Bimestre 3",s:"Diseño",l:true,w:[]},{t:"Bimestre 4",s:"IA Ayuda",l:true,w:[]}]},
+ {id:"g5",t:"5to Primaria",s:"Productividad",b:[{t:"Bimestre 1",s:"Nube",l:false,w:g5_b1},{t:"Bimestre 2",s:"Sheets",l:true,w:[]},{t:"Bimestre 3",s:"Web",l:true,w:[]},{t:"Bimestre 4",s:"IA Gen",l:true,w:[]}]},
+ {id:"g6",t:"6to Primaria",s:"Profesional",b:[{t:"Bimestre 1",s:"Oficina Pro",l:false,w:g6_b1},{t:"Bimestre 2",s:"Colaboración",l:true,w:[]},{t:"Bimestre 3",s:"Video Pro",l:true,w:[]},{t:"Bimestre 4",s:"IA Pro",l:true,w:[]}]}
+];
+
+// --- MOTOR DE LA APP ---
+const m=document.getElementById("m"),h=document.getElementById("t"),bk=document.getElementById("b");
+let st={g:null,b:null};function init(){rG()}
+function rG(){st={g:null,b:null};uH("Grados",0);m.innerHTML=`<div class="grd">${appData.map((g,x)=>`<div class="crd" onclick="sG(${x})"><div class="ic material-icons">school</div><span class="ct">${g.t}</span><span class="cs">${g.s}</span></div>`).join("")}</div>`}
+function sG(x){st.g=appData[x];rB()}
+function rB(){uH(st.g.t,1);m.innerHTML=`<div class="grd">${st.g.b.map((b,x)=>`<div class="crd bim ${b.l?'lck':''}" onclick="${b.l?'alert(\'🔒 Bimestre bloqueado\')':'sB('+x+')'}"><div class="ic material-icons">${b.l?'lock':'calendar_today'}</div><span class="ct">${b.t}</span><span class="cs">${b.s}</span></div>`).join("")}</div>`}
+function sB(x){st.b=st.g.b[x];rW()}
+function rW(){uH(st.b.t,1);m.innerHTML=`<div class="lst">${st.b.w.map((w,x)=>`<div class="it" onclick="rD(${x})"><span>${w.t}</span><span class="material-icons" style="color:#cbd5e1">chevron_right</span></div>`).join("")}</div>`}
+function rD(x){const w=st.b.w[x],y=`https://www.youtube.com/results?search_query=${encodeURIComponent(w.v)}`;uH("Lección",1);m.innerHTML=`<div class="dt"><span class="bdg">${st.g.t}</span><h2>${w.t}</h2><div class="sh"><span class="material-icons">menu_book</span>Explicación</div><div class="bx">${w.c}</div><div class="sh act"><span class="material-icons">sports_esports</span>Actividades</div><div class="tabs"><button class="tb on" onclick="sA(0,${x})">Actividad 1</button><button class="tb" onclick="sA(1,${x})">Actividad 2</button></div><div id="ax" class="abx">${gA(w.a1)}</div><a href="${y}" target="_blank" class="vid"><span class="material-icons" style="margin-right:8px">play_circle_filled</span>Ver Video del Tema</a></div>`}
+window.sA=function(i,x){const w=st.b.w[x];document.querySelectorAll(".tb").forEach((b,z)=>b.classList.toggle("on",z===i));document.getElementById("ax").innerHTML=gA(i===0?w.a1:w.a2)};
+function gA(a){return`<span class="atit">${a.t}</span><div class="bx">${a.d}</div>`}
+function uH(t,b){h.innerText=t;bk.classList.toggle("hid",!b);bk.onclick=gB}
+function gB(){if(document.querySelector(".dt"))rW();else if(document.querySelector(".lst"))rB();else rG()}
+init();
+</script></body></html>
