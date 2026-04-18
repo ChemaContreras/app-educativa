@@ -1323,8 +1323,11 @@ function cargarPlataforma(datosUsuario) {
     loginScreen.style.display = "none";
     navbar.classList.remove("hid"); mainContent.classList.remove("hid");
     
+    // Forzamos a minúsculas para que no haya errores de "B1" vs "b1"
+    let idGrado = datosUsuario.grado.toLowerCase(); 
+
     // MAGIA DE COLOR: Cambio automático para Nivel Básico
-    if(datosUsuario.grado.startsWith('b')) {
+    if(idGrado.startsWith('b')) {
         document.documentElement.style.setProperty('--p', '#059669'); // Verde Esmeralda
         document.documentElement.style.setProperty('--s', '#0f172a'); // Pizarra
     } else {
@@ -1332,12 +1335,16 @@ function cargarPlataforma(datosUsuario) {
         document.documentElement.style.setProperty('--s', '#db2777'); // Rosa Primaria
     }
 
-    st.g = appData.find(grado => grado.id === datosUsuario.grado);
+    // Buscamos el grado ignorando mayúsculas/minúsculas
+    st.g = appData.find(grado => grado.id.toLowerCase() === idGrado);
+    
     if (st.g) {
         st.g.b.forEach((bim, index) => { bim.l = !datosUsuario.bimestres.includes(index); });
         rB();
     } else {
-        alert("Grado no encontrado."); cerrarSesion();
+        // Si sigue fallando, la alerta te dirá EXACTAMENTE qué leyó en Firebase
+        alert("Grado no encontrado. Firebase envió: '" + datosUsuario.grado + "'"); 
+        cerrarSesion();
     }
 }
 
