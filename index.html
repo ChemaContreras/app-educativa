@@ -1761,7 +1761,7 @@ function cargarPlataforma(datosUsuario) {
     loginScreen.style.display = "none";
     navbar.classList.remove("hid"); mainContent.classList.remove("hid");
     
-    // Forzar a minúsculas
+    // Forzar a minúsculas para coincidencia exacta
     let idGrado = datosUsuario.grado.toLowerCase(); 
 
     // MAGIA DE COLOR: Cambio automático para Nivel Básico
@@ -1779,7 +1779,7 @@ function cargarPlataforma(datosUsuario) {
         st.g.b.forEach((bim, index) => { bim.l = !datosUsuario.bimestres.includes(index); });
         rB();
     } else {
-        alert("Grado no encontrado. Revisa tu base de datos."); 
+        alert("Grado no encontrado en la base de datos."); 
         cerrarSesion();
     }
 }
