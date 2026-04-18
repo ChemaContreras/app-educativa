@@ -12,6 +12,8 @@
 <style>
     /* ESTILOS GLOBALES */
     :root { --p: #2563eb; --s: #db2777; --bg: #f8fafc; --c: #fff; --t: #334155; }
+    body.tema-basico { --p: #059669; --s: #0f172a; } /* Magia: Colores para Nivel Básico */
+
     body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--t); padding-bottom: 80px; }
     .nav { background: var(--p); color: #fff; padding: 1rem; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     .bk { background: 0 0; border: 0; color: #fff; font-size: 24px; margin-right: 15px; cursor: pointer; }
@@ -90,10 +92,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// =====================================================================
-// ↓↓↓ ¡PEGA TU CONTENIDO JUSTO DEBAJO DE ESTA LÍNEA! ↓↓↓
-// =====================================================================
-
 // --- AQUÍ COMIENZA EL CONTENIDO ---
 
 // === GRADO 1 ===
@@ -124,7 +122,7 @@ const g1_b1 = [
   a2:{t:"Mis Favoritas", d:"Busca la foto más bonita que tengas y dale al corazón ❤️ (Favoritos) para no perderla nunca."}, 
   v:"galeria de fotos android niños"},
  {t:"Semana 6: Emojis y Teclado", 
-  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Escribir nuestro nombre y usar caritas (emojis) para expresarnos.</p><p><strong>📖 Explicación:</strong><br>El teclado del celular es mágico. Tiene letras para escribir palabras, pero también tiene dibujos llamados <b>Emojis</b>. Un emoji vale más que mil palabras: una carita feliz 🙂 dice que estás contento sin escribir nada.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre una aplicación de Notas.<br>2. Toca la pantalla para que salga el teclado.<br>3. Busca la carita feliz 🙂 en el teclado para abrir el menú de emojis.<br>4. Explora los animales, comidas y caritas.</p>", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Escribir nuestro nombre y usar caritas (emojis) para expresarnos.</p><p><strong>📖 Explicación:</strong><br>El teclado del celular es mágico. Tiene letras para escribir palabras, pero también tiene dibujos llamado <b>Emojis</b>. Un emoji vale más que mil palabras: una carita feliz 🙂 dice que estás contento sin escribir nada.</p><p><strong>🛠️ Manos a la obra:</strong><br>1. Abre una aplicación de Notas.<br>2. Toca la pantalla para que salga el teclado.<br>3. Busca la carita feliz 🙂 en el teclado para abrir el menú de emojis.<br>4. Explora los animales, comidas y caritas.</p>", 
   a1:{t:"Mi Nombre Animal", d:"Escribe tu nombre y pon al lado el animal que te represente. (Ejemplo: 'Ana 🦋')."}, 
   a2:{t:"Cuento con Emojis", d:"Intenta escribir una frase solo con dibujos. Ej: 🏠 🏃 🏫 (Corro de casa a la escuela)."}, 
   v:"teclado y emojis para niños"},
@@ -359,7 +357,7 @@ const g2_b2 = [
   v:"escribir cuentos en digital niños"}
 ];
   
-  // === GRADO 2 - BIMESTRE 3: Artista ===
+ // === GRADO 2 - BIMESTRE 3: Artista ===
 const g2_b3 = [
  {t:"Semana 1: El Lienzo Digital", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Conocer las diferencias entre dibujar en papel y dibujar en una pantalla táctil.</p><p><strong>📖 Explicación detallada:</strong><br>Dibujar en una pantalla es muy diferente a dibujar en un papel. Cuando usas crayones reales, si te equivocas es difícil borrar sin dañar la hoja. En el arte digital, la pantalla se convierte en un 'Lienzo', que es un espacio de trabajo infinito e indestructible.<br><br>Al abrir una aplicación de dibujo digital (como Sketchbook, Paint o IbisPaint), lo primero que verás es una gran área blanca central y muchas herramientas a los lados. La pantalla registra el calor y el movimiento de tus dedos con muchísima precisión. Además, no necesitas presionar fuerte contra el vidrio; un toque suave es suficiente para que los sensores de la tablet o celular comiencen a dibujar píxeles de colores.</p>", 
@@ -403,7 +401,7 @@ const g2_b3 = [
   v:"guardar dibujo digital galeria"}
 ];
   
-  // === GRADO 2 - BIMESTRE 4: IA Voz ===
+ // === GRADO 2 - BIMESTRE 4: IA Voz ===
 const g2_b4 = [
  {t:"Semana 1: ¿Qué es un Asistente de Voz?", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comprender el concepto de los asistentes virtuales integrados en los dispositivos modernos.</p><p><strong>📖 Explicación detallada:</strong><br>Hace años, la única forma de darle una instrucción a una computadora era escribiendo en un teclado o moviendo un ratón. Hoy en día, gracias a la Inteligencia Artificial, las máquinas tienen 'oídos digitales'.<br><br>Un Asistente de Voz es un programa de IA diseñado para escuchar el lenguaje humano, entender lo que pedimos y respondernos con una voz sintética (robótica pero que suena natural). Los más famosos son Siri (de Apple), Google Assistant y Alexa (de Amazon). Estos asistentes están dormidos hasta que escuchan su 'Palabra de activación' (como 'Hey Google'). Al decir esas palabras mágicas, el micrófono se enciende, graba tu voz, la envía a la nube, la procesa y te devuelve una respuesta en segundos.</p>", 
@@ -534,7 +532,7 @@ const g3_b2 = [
   v:"hacer afiche en word celular"}
 ];
   
-  // === GRADO 3 - BIMESTRE 3: Slides Pro ===
+ // === GRADO 3 - BIMESTRE 3: Slides Pro ===
 const g3_b3 = [
  {t:"Semana 1: Las Tarjetas Gigantes", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comprender la lógica y estructura de una presentación digital vs. un documento de texto.</p><p><strong>📖 Explicación detallada:</strong><br>Google Docs es como un rollo de papel higiénico: va de arriba hacia abajo sin fin, ideal para leer de cerca. Google Slides (Presentaciones) funciona de forma diferente: es como un montón de tarjetas didácticas grandes, llamadas 'Diapositivas'.<br><br>Cada diapositiva ocupa toda la pantalla a la vez. Están diseñadas para proyectarse en la pared o en la televisión frente a una audiencia. Por esta razón, el diseño visual es mucho más importante que la cantidad de texto. Si intentas escribir toda tu tarea en una sola diapositiva, las letras quedarán diminutas, el público se aburrirá y nadie podrá leerlo desde lejos. Slides nos obliga a resumir nuestras ideas.</p>", 
@@ -578,7 +576,7 @@ const g3_b3 = [
   v:"tips para exponer con diapositivas"}
 ];
   
-  // === GRADO 3 - BIMESTRE 4: IA Tools ===
+ // === GRADO 3 - BIMESTRE 4: IA Tools ===
 const g3_b4 = [
  {t:"Semana 1: Autocorrector y Texto Predictivo", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comprender cómo el teclado utiliza estadística e IA para predecir las palabras que vamos a escribir.</p><p><strong>📖 Explicación detallada:</strong><br>¿Te has fijado que mientras escribes un mensaje, el teclado del celular te sugiere la siguiente palabra en la parte superior antes de que la teclees? A esto se le llama 'Texto Predictivo'.<br><br>No es que el celular lea tu mente. Utiliza una IA de procesamiento de lenguaje que se basa en matemáticas y probabilidad. La IA ha leído millones de correos y libros, y ha calculado que después de la palabra 'Feliz', la palabra que más usan los humanos es 'Cumpleaños'. Además, la IA 'aprende' de ti; si siempre escribes 'Nos vemos en el parque', la próxima vez que escribas 'Nos vemos en el...', el teclado adivinará la palabra 'parque' automáticamente para ahorrarte tiempo.</p>", 
@@ -621,7 +619,6 @@ const g3_b4 = [
   a2:{t:"Reflexión Final", d:"Escribe un pequeño ensayo de 5 líneas respondiendo: ¿Cómo crees que nos ayudará la Inteligencia Artificial cuando seas adulto y estés trabajando?"}, 
   v:"el futuro de la tecnologia en la educacion"}
 ];
-  
 
 // === GRADO 4 ===
 const g4_b1 = [
@@ -711,7 +708,7 @@ const g4_b2 = [
   v:"como hacer una buena presentacion niños"}
 ];
   
-  // === GRADO 4 - BIMESTRE 3: Diseño ===
+ // === GRADO 4 - BIMESTRE 3: Diseño ===
 const g4_b3 = [
  {t:"Semana 1: El Lienzo y los Formatos", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comprender las dimensiones y orientaciones de un archivo digital según su propósito.</p><p><strong>📖 Explicación detallada:</strong><br>Antes de poner un solo color o letra, un diseñador debe saber dónde se verá su trabajo. En las aplicaciones de diseño (como Canva, Adobe Express o similares), lo primero es elegir el 'Formato' del lienzo.<br><br>Si el diseño es para imprimirse en la escuela, usaremos un formato rectangular vertical (A4 o Carta). Si es para proyectarse en una pantalla, será rectangular horizontal (16:9). Si es para el perfil de una red social, debe ser un cuadrado perfecto (1:1). Escoger el lienzo equivocado desde el principio hará que, al final, tu diseño salga cortado al intentar imprimirlo o que queden barras negras a los lados en las pantallas. La planificación espacial es el paso número uno.</p>", 
@@ -755,7 +752,7 @@ const g4_b3 = [
   v:"como hacer un cartel digital facil"}
 ];
   
-  // === GRADO 4 - BIMESTRE 4: IA Ayuda ===
+ // === GRADO 4 - BIMESTRE 4: IA Ayuda ===
 const g4_b4 = [
  {t:"Semana 1: ¿Qué es la IA de Asistencia?", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comprender cómo la Inteligencia Artificial actúa como una herramienta de apoyo para potenciar nuestras capacidades diarias.</p><p><strong>📖 Explicación detallada:</strong><br>La Inteligencia Artificial no viene a reemplazar a los humanos, viene a asistirnos. A esto se le llama 'Inteligencia Aumentada'. Así como una calculadora nos ayuda a resolver multiplicaciones gigantes en un segundo sin que tengamos que hacerlas en papel, la IA de asistencia nos ayuda a procesar grandes cantidades de información rápidamente.<br><br>Los asistentes virtuales, los sistemas de dictado y los traductores son ejemplos de IA de ayuda. No piensan por ti, pero ejecutan las tareas repetitivas o complejas para que tu cerebro humano tenga más tiempo y energía para dedicarse a lo más importante: la creatividad y la toma de decisiones.</p>", 
@@ -829,7 +826,7 @@ const g5_b1 = [
  {t:"Semana 6: Fake News", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> No creer todo lo que vemos en internet. Verificar la verdad.</p><p><strong>📖 Explicación:</strong><br>Cualquiera puede escribir en internet. Debemos ser detectives para saber si es verdad. Si una noticia es demasiado sorprendente o te da mucho miedo, ¡duda!</p><ul><li><b>¿Quién lo escribió?</b> (Autor).</li><li><b>¿Cuándo?</b> (Fecha).</li><li><b>¿Otras páginas dicen lo mismo?</b></li></ul>", 
   a1:{t:"El Detective", d:"Busca una noticia 'rara' (ej: Animales que llueven). Investiga en 2 webs distintas si es Verdadera o Falsa y explica por qué."}, 
-  a2:{t:"Fuente", d:"Aprende a identificar si una web es seria (Revisa la sección 'Quiénes somos' o busca la fecha de la noticia)."}, 
+  a2:{t:"Fuente", d:"Aprende a identify if a web is serious (Review the 'About Us' section or search for the news date)."}, 
   v:"identificar fake news niños"},
  {t:"Semana 7: Comentarios Docs", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Corregir trabajos de compañeros de forma digital y amable.</p><p><strong>📖 Explicación:</strong><br>En lugar de tachar con rojo o borrar lo que hizo tu amigo, en digital usamos <b>Comentarios</b>. Así tu amigo puede ver qué cambiar sin que le arruines su documento.</p><p><strong>🛠️ Manos a la obra:</strong><br>Selecciona una palabra > Toca el ícono '+' de comentario > Escribe tu sugerencia.</p>", 
@@ -886,8 +883,8 @@ const g5_b2 = [
   a2:{t:"Automatización Financiera", d:"En la parte inferior de la columna de precios, crea una fila de 'Total'. Utiliza la función =SUMA() abarcando todos los precios superiores para generar la sumatoria exacta del dinero necesario."}, 
   v:"presupuesto en google sheets basico"}
 ];
-  
-  // === GRADO 5 - BIMESTRE 3: Web ===
+
+// === GRADO 5 - BIMESTRE 3: Web ===
 const g5_b3 = [
  {t:"Semana 1: Navegadores y Buscadores", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Diferenciar entre la aplicación que nos da acceso a internet y el motor que encuentra la información.</p><p><strong>📖 Explicación detallada:</strong><br>Mucha gente confunde un 'Navegador' con un 'Buscador', pero son herramientas tecnológicas distintas. El Navegador (Browser) es el programa o aplicación instalada en tu dispositivo que sirve como ventana hacia el internet; ejemplos de esto son Google Chrome, Safari, Firefox o Edge.<br><br>Por otro lado, el Buscador (Search Engine) es una página web súper potente que vive <i>dentro</i> del navegador (como Google.com, Bing o Yahoo). Su trabajo es usar robots (algoritmos) para rastrear miles de millones de páginas web y devolverte una lista ordenada de resultados cuando tú escribes una palabra clave. Entender esto es fundamental para solucionar problemas de conexión o configuración en tu dispositivo.</p>", 
@@ -930,8 +927,8 @@ const g5_b3 = [
   a2:{t:"Archivo de Fuentes", d:"Encuentra una página confiable, guárdala en tus marcadores y descarga una imagen con derechos libres relacionada al tema para tenerla lista en tu galería."}, 
   v:"como investigar en internet para estudiantes"}
 ];
-  
-  // === GRADO 5 - BIMESTRE 4: IA Gen ===
+
+// === GRADO 5 - BIMESTRE 4: IA Gen ===
 const g5_b4 = [
  {t:"Semana 1: ¿Qué es la IA Generativa?", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Diferenciar entre la IA que analiza datos y la nueva IA que crea contenido original (LLMs).</p><p><strong>📖 Explicación detallada:</strong><br>Hasta hace poco, la IA solo servía para organizar información: buscar fotos, traducir textos o ganarte en el ajedrez. Pero ha surgido una tecnología revolucionaria: La Inteligencia Artificial Generativa. Esta IA no busca cosas que ya existen, sino que <i>crea cosas completamente nuevas</i> que jamás habían existido.<br><br>Modelos como ChatGPT, Gemini o Claude se llaman 'Grandes Modelos de Lenguaje' (LLM). Han leído casi todo el internet (miles de millones de libros y páginas web). Entienden la estructura del lenguaje humano tan bien que pueden conversar contigo, escribirte un poema, inventar un cuento o redactar un código de programación, simplemente prediciendo qué palabra tiene más sentido escribir después de la otra basándose en su gigantesco entrenamiento matemático.</p>", 
@@ -1062,8 +1059,8 @@ const g6_b2 = [
   a2:{t:"Validación de Entrega", d:"Realicen una auditoría final: verifiquen la ortografía general, asegúrense de que todos los comentarios internos hayan sido resueltos (cerrados) y validen que el archivo cuente con los permisos adecuados para que el profesor pueda evaluarlo."}, 
   v:"google workspace colaboracion escolar"}
 ];
-  
-  // === GRADO 6 - BIMESTRE 3: Video Pro ===
+
+// === GRADO 6 - BIMESTRE 3: Video Pro ===
 const g6_b3 = [
  {t:"Semana 1: El Guion y Formato de Video", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Planificar la producción audiovisual antes de encender la cámara y configurar el lienzo del editor.</p><p><strong>📖 Explicación detallada:</strong><br>Una película profesional no se graba al azar; se planifica en papel mediante un Guion. Editar un montón de videos sueltos sin saber qué historia quieres contar resultará en un video desastroso. Antes de tocar la aplicación de edición, debes saber cuál será el inicio, el desarrollo y el final de tu proyecto.<br><br>Al abrir una aplicación de edición avanzada (como CapCut, InShot o Premiere), lo primero es definir la 'Relación de Aspecto' o formato del lienzo (Canvas). Si el video es para YouTube o proyectarse en TV, el formato debe configurarse obligatoriamente en 16:9 (Horizontal/Acostado). Si el video es para TikTok o Reels, el formato debe ser 9:16 (Vertical/Parado). Mezclar videos verticales en un lienzo horizontal generará unas terribles franjas negras a los lados que arruinan la estética visual.</p>", 
@@ -1087,7 +1084,7 @@ const g6_b3 = [
   v:"mezcla de audio en edicion celular"},
  {t:"Semana 5: Títulos y Subtítulos", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Insertar tipografía animada en el video para retener la atención en redes y exposiciones.</p><p><strong>📖 Explicación detallada:</strong><br>El texto en un video cumple varias funciones: puede ser un gran Título de introducción, un cintillo que presenta el nombre de la persona que habla, o pueden ser subtítulos. Dado que muchas personas ven videos en sus celulares sin sonido, los subtítulos se han vuelto imprescindibles en la edición moderna.<br><br>Al usar la herramienta 'Texto' en el editor, se creará una nueva caja en la pantalla y una nueva pista de color flotando por encima del video en la línea de tiempo. Tú controlas exactamente en qué segundo aparece y en qué segundo desaparece el texto alargando o acortando esa pista flotante con tus dedos. Además, puedes acceder a la sección de 'Animaciones' para hacer que las letras entren a la pantalla rebotando, escribiéndose a máquina o desvaneciéndose elegantemente.</p>", 
-  a1:{t:"Títulos Animados", d:"Toca la opción 'Texto', escribe el título de tu video y ponle un color llamativo. Luego busca el botón de 'Animación' y elige el efecto de 'Máquina de escribir' para que las letras aparezcan de una en una."}, 
+  a1:{t:"Títulos Animados", d:"Toca la option 'Texto', escribe el título de tu video y ponle un color llamativo. Luego busca el botón de 'Animación' y elige el efecto de 'Máquina de escribir' para que las letras aparezcan de una en una."}, 
   a2:{t:"Control de Tiempo", d:"Mira la barra de texto que apareció en tu línea de tiempo. Toca su borde derecho y arrástralo hacia la izquierda para que el título desaparezca a los 3 segundos exactos de iniciar el video."}, 
   v:"textos y animaciones en capcut"},
  {t:"Semana 6: Efecto PIP (Imágenes Superpuestas)", 
@@ -1106,8 +1103,8 @@ const g6_b3 = [
   a2:{t:"Renderizado", d:"Revisa que no falte nada. Toca el botón de exportación arriba a la derecha, configura la calidad en 1080p y presiona Exportar. Espera pacientemente hasta que llegue al 100% y búscalo en tu galería de fotos."}, 
   v:"como exportar video en alta calidad celular"}
 ];
-  
-  // === GRADO 6 - BIMESTRE 4: IA Pro ===
+
+// === GRADO 6 - BIMESTRE 4: IA Pro ===
 const g6_b4 = [
  {t:"Semana 1: IA como Co-piloto de Trabajo", 
   c:"<p><strong>🎓 Lo que aprenderemos:</strong> Entender el concepto de 'Copiloto' integrado en las aplicaciones ofimáticas para acelerar la productividad.</p><p><strong>📖 Explicación detallada:</strong><br>Hasta hace poco, para usar Inteligencia Artificial debías ir a una página web separada (como la de ChatGPT o Claude). Hoy, la IA vive dentro de tus aplicaciones diarias. Google Workspace, Microsoft Office (Copilot) y Canva tienen a la IA integrada como un botón mágico flotando en tu documento.<br><br>La mentalidad profesional ya no es empezar un trabajo desde cero frente a una pantalla en blanco. La mentalidad moderna es pedirle a tu Copiloto de IA que te genere un borrador inicial, una plantilla base o una estructura de puntos, para que tú, como el piloto humano, corrijas, refines y apliques tu conocimiento sobre ese molde. A esto se le llama 'Productividad Aumentada'.</p>", 
@@ -1120,18 +1117,7 @@ const g6_b4 = [
   a2:{t:"Restricciones Negativas", d:"Agrega a tu prompt anterior una orden que diga qué es lo que la IA NO debe hacer bajo ninguna circunstancia."}, 
   v:"prompt engineering avanzado ejemplos"},
  {t:"Semana 3: IA en Documentos Profesionales", 
-  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Utilizar modelos de lenguaje para reformular tonos, expandir ideas o cambiar el registro de un documento.</p><p><strong>📖 Explicación detallada:</strong><br>Escribir un correo para un amigo es muy diferente a escribir un correo para el director de una escuela o una empresa. Muchas veces tenemos la idea correcta, pero no sabemos cómo hacer que suene profesional y educada. <br><br>Una técnica avanzada en Docs es usar la IA para 'Reescribir' (Rewrite). Tú escribes un párrafo rápido, crudo y con tus propias palabras (ej: 'Profe, no pude hacer la tarea por enfermo, deme más tiempo'). Seleccionas el texto, abres tu Copiloto de IA y le indicas: 'Reescribe este texto con un tono formal, empático y profesional'. La IA transformará tu idea cruda en un texto corporativo excelente, garantizando que tu comunicación sea siempre de alto nivel.</p>", 
-  a1:{t:"El Tono Profesional", d:"Escribe un mensaje muy informal pidiendo permiso para faltar a clases. Luego, redacta el Prompt que usarías para que la IA lo convierta en una carta formal."}, 
-  a2:{t:"Expansión de Ideas", d:"Escribe una sola oración sobre un tema. Explica cómo le pedirías a la IA que expanda esa idea en tres párrafos desarrollando el concepto."}, 
-  v:"reescribir textos con inteligencia artificial"},
- {t:"Semana 4: IA en Hojas de Cálculo (Data)", 
-  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Delegar la creación de fórmulas complejas y el análisis de patrones a la inteligencia de la hoja de cálculo.</p><p><strong>📖 Explicación detallada:</strong><br>Google Sheets y Excel tienen integrada una IA de análisis de datos súper potente. Si tienes una tabla con muchísimos números, ventas o fechas, y no sabes qué gráfica hacer o qué fórmula usar, ya no tienes que memorizar todas las matemáticas de la computadora.<br><br>Existen funciones como 'Explorar' (o Copilot) donde puedes escribir en lenguaje natural: '¿Cuál fue el producto que más se vendió en el mes de marzo?'. La IA lee la tabla por ti, escribe la fórmula compleja de extracción de datos de forma invisible, y te devuelve la respuesta escrita o te dibuja el gráfico ideal automáticamente. También sirve para pedirle a los Chatbots que nos escriban fórmulas que no recordamos (Ej: 'Escríbeme la fórmula de Excel para sumar solo los números mayores a 50').</p>", 
-  a1:{t:"Fórmulas en Lenguaje Natural", d:"Imagina que tienes una tabla de notas de alumnos. Redacta cómo le preguntarías a la IA (en lenguaje natural) que te busque a los alumnos reprobados."}, 
-  a2:{t:"Consultor de Código", d:"Redacta un prompt dirigido a ChatGPT/Gemini pidiéndole que te explique cómo funciona la fórmula de Sheets '=PROMEDIO(A1:A10)' como si tuvieras 10 años."}, 
-  v:"usar chatgpt para formulas de excel"},
- {t:"Semana 5: IA en Presentaciones", 
-  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Agilizar la maquetación visual y la estructuración de ideas en diapositivas mediante generadores automáticos.</p><p><strong>📖 Explicación detallada:</strong><br>Crear una presentación de 20 diapositivas puede tomar días si tienes que acomodar el texto y buscar fotos para cada hoja. En el entorno profesional, usamos la IA para generar el 'esqueleto' de la presentación en segundos.<br><br>Herramientas como Canva Magic Design o Tome App te permiten escribir un solo prompt: 'Crea una presentación de 5 diapositivas sobre la historia de las computadoras'. La IA escribirá los textos resumidos, buscará y acomodará imágenes, y aplicará un diseño corporativo a todas las hojas casi al instante. Tu trabajo como profesional ya no es acomodar cuadritos, sino revisar críticamente la información generada, corregir las alucinaciones de la IA y agregar tu toque humano y conocimiento experto a la base generada.</p>", 
-  a1:{t:"El Prompt de Diseño", d:"Escribe una instrucción completa para una IA generadora de presentaciones. Incluye el tema, la cantidad de diapositivas y qué colores debería usar el diseño."}, 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Utilizar modelos de lenguaje para reformular tonos, expandir ideas o cambiar el registro de un documento.</p><p><strong>📖 Explicación detallada:</strong><br>Escribir un correo para un amigo es muy diferente a escribir un correo para el director de una escuela o una empresa. Muchas veces tenemos la idea correcta, pero no sabemos cómo hacer que suene profesional y educada. <br><br>Una técnica avanzada en Docs es usar la IA para 'Reescribir' (Rewrite). Tú escribes un párrafo rápido, crudo y con tus propias palabras (ej: 'Profe, no pude hacer la tarea por enfermo, deme más tiempo 
   a2:{t:"El Rol del Revisor", d:"¿Por qué sería un error terrible generar una presentación con IA y proyectarla en tu clase sin haberla leído antes tú mismo?"}, 
   v:"canva magic design presentaciones ia"},
  {t:"Semana 6: Lógica de Programación y Código", 
@@ -1150,22 +1136,136 @@ const g6_b4 = [
   a2:{t:"El Manifiesto Ético", d:"Redacta tu compromiso como Ciudadano Digital: Escribe 3 reglas que siempre cumplirás al usar la IA en la escuela y en tu vida futura para evitar el plagio y la desinformación."}, 
   v:"el impacto de la inteligencia artificial en el futuro"}
 ];
-  
-  // --- ESTRUCTURA PRINCIPAL ---
-const appData = [
- {id:"g1",t:"1ro Primaria",s:"Iniciación",b:[{t:"Bimestre 1",s:"Mi Oficina Móvil",l:false,w:g1_b1},{t:"Bimestre 2",s:"Nube y Docs",l:false,w:g1_b2},{t:"Bimestre 3",s:"Canva Kids",l:true,w:g1_b3},{t:"Bimestre 4",s:"IA Básica",l:true,w:g1_b4}]},
- {id:"g2",t:"2do Primaria",s:"Explorador",b:[{t:"Bimestre 1",s:"Interfaz",l:false,w:g2_b1},{t:"Bimestre 2",s:"Escritura",l:false,w:g2_b2},{t:"Bimestre 3",s:"Artista",l:true,w:g2_b3},{t:"Bimestre 4",s:"IA Voz",l:true,w:g2_b4}]},
- {id:"g3",t:"3ro Primaria",s:"Creador",b:[{t:"Bimestre 1",s:"Edición",l:false,w:g3_b1},{t:"Bimestre 2",s:"Docs Pro",l:false,w:g3_b2},{t:"Bimestre 3",s:"Slides Pro",l:true,w:g3_b3},{t:"Bimestre 4",s:"IA Tools",l:true,w:g3_b4}]},
- {id:"g4",t:"4to Primaria",s:"Multimedia",b:[{t:"Bimestre 1",s:"Video",l:false,w:g4_b1},{t:"Bimestre 2",s:"Ofimática",l:false,w:g4_b2},{t:"Bimestre 3",s:"Diseño",l:true,w:g4_b3},{t:"Bimestre 4",s:"IA Ayuda",l:true,w:g4_b4}]},
- {id:"g5",t:"5to Primaria",s:"Productividad",b:[{t:"Bimestre 1",s:"Nube",l:false,w:g5_b1},{t:"Bimestre 2",s:"Sheets",l:false,w:g5_b2},{t:"Bimestre 3",s:"Web",l:true,w:g5_b3},{t:"Bimestre 4",s:"IA Gen",l:true,w:g5_b4}]},
- {id:"g6",t:"6to Primaria",s:"Profesional",b:[{t:"Bimestre 1",s:"Oficina Pro",l:false,w:g6_b1},{t:"Bimestre 2",s:"Colaboración",l:false,w:g6_b2},{t:"Bimestre 3",s:"Video Pro",l:true,w:g6_b3},{t:"Bimestre 4",s:"IA Pro",l:true,w:g6_b4}]}
+
+// =====================================================================
+// === VARIABLES DE CONTENIDO (BÁSICOS) ===
+// =====================================================================
+
+// === 1RO BÁSICO ===
+const b1_bim1 = [
+ {t:"Semana 1: El Estándar Internacional (Normas APA)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Configurar el lienzo de trabajo bajo estándares internacionales antes de comenzar la redacción.</p><p><strong>📖 Explicación detallada:</strong><br>En la primaria, el objetivo de usar un procesador de texto era simplemente aprender a escribir. En el nivel Básico, el objetivo cambia: ahora debes aprender a presentar información como un profesional. En el mundo académico y laboral existen reglas universales, y la más importante de ellas son las Normas APA.<br><br>Las Normas APA estandarizan cómo se ve un documento para que cualquier persona pueda leerlo sin distraerse. La regla número uno de un profesional es preparar el 'Lienzo' antes de escribir. Ve a la pestaña 'Disposición' o 'Formato' y configura los márgenes exactamente a 2.54 cm en los cuatro lados. Luego, asegúrate de que todo el documento tenga una tipografía formal (Times New Roman 12 o Arial 11) y un interlineado de 2.0 (doble espacio). Además, la primera línea de cada párrafo nuevo debe tener una sangría de 1.27 cm, lo cual se logra presionando la tecla 'Tab'. Configurar esto al inicio te ahorrará horas de frustración al final del proyecto.</p>", 
+  a1:{t:"El Lienzo Perfecto", d:"Abre un documento nuevo. Antes de escribir nada, configura los márgenes a 2.54 cm, elige la fuente Arial 11 y pon el interlineado en 2.0. Guarda este documento como 'Plantilla_APA'."}, 
+  a2:{t:"Aplicación Crítica", d:"Escribe un párrafo de 5 líneas sobre tu pasatiempo favorito respetando la sangría inicial. Observa cómo el interlineado doble hace que el texto sea mucho más fácil de leer."}, 
+  v:"configurar normas apa septima edicion word"},
+ {t:"Semana 2: Estructura, Jerarquía e Índices", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Utilizar los metadatos de estilos para organizar el documento y generar tablas de contenido automáticas.</p><p><strong>📖 Explicación detallada:</strong><br>Hacer un índice a mano (escribiendo el tema y llenando de puntitos) es un error de novatos. Si agregas más texto y la página cambia, tu índice quedará arruinado. La ofimática profesional soluciona esto usando la Jerarquía de Estilos.<br><br>En la pestaña de 'Inicio' existe una galería llamada 'Estilos'. Estos le inyectan código invisible al texto, diciéndole a la computadora qué nivel de importancia tiene cada frase. 'Título 1' se usa para los temas principales, 'Título 2' para los subtemas, y 'Título 3' para detalles específicos.<br><br>Al estructurar tu documento marcando cada título con su estilo correspondiente, puedes ir a la pestaña 'Referencias' y hacer clic en 'Tabla de Contenido'. El procesador buscará todo lo que marcaste, organizará los niveles, detectará en qué página exacta están y creará un índice perfecto. Si tu documento cambia, solo debes hacer clic derecho sobre el índice y seleccionar 'Actualizar campos'.</p>", 
+  a1:{t:"Marcado de Texto", d:"Copia y pega un artículo de Wikipedia sobre un país. Selecciona el nombre del país y aplícale 'Título 1'. Busca tres temas importantes y aplícales 'Título 2'."}, 
+  a2:{t:"Generación Mágica", d:"Crea una página en blanco al principio de tu artículo. Ve a 'Referencias', inserta una Tabla de Contenido automática y verifica que los títulos y las páginas coincidan."}, 
+  v:"indice automatico word estilos"},
+ {t:"Semana 3: Secciones, Encabezados y Paginación", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Dividir el documento en segmentos independientes para manipular la numeración y orientación de las páginas.</p><p><strong>📖 Explicación detallada:</strong><br>Un documento académico real no es igual desde la página 1 hasta la 100. La portada no debe llevar número, el índice suele llevar números romanos, y a veces necesitas que una sola página esté horizontal para meter un mapa. Para lograr esto, usamos los Saltos de Sección.<br><br>Una 'Sección' es como un compartimento sellado dentro de tu documento. Lo que le haces a la Sección 2 no afecta a la Sección 1. Para crearla, ve a 'Disposición' > 'Saltos' > 'Salto de Sección a la página siguiente'.<br><br>Al hacer doble clic en la parte más alta de la hoja, se abre el editor de encabezados, donde insertamos el Número de Página (esquina superior derecha en APA). Para evitar que el número aparezca en la portada, abres el encabezado de la página 2 y desmarcas el botón 'Vincular al anterior'. Esto independiza las páginas, permitiéndote borrar el número de la portada sin afectar al resto.</p>", 
+  a1:{t:"El Salto de Sección", d:"Abre un documento de 3 páginas. Al final de la página 1, inserta un Salto de Sección (Página Siguiente). Ve a la página 2 y cambia su orientación a Horizontal. La página 1 debe quedarse vertical."}, 
+  a2:{t:"Paginación Profesional", d:"Inserta números de página en la esquina superior derecha. Rompe el vínculo entre secciones para asegurarte de que la página 1 (tu portada) no muestre ningún número."}, 
+  v:"saltos de seccion y numeracion word"},
+ {t:"Semana 4: Evitando el Plagio (Citas y Bibliografía)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Comprender la ética digital y utilizar el gestor de fuentes para dar crédito a los autores originales.</p><p><strong>📖 Explicación detallada:</strong><br>Copiar y pegar el trabajo de otra persona haciéndolo pasar por tuyo es un delito académico llamado Plagio. Para evitarlo, siempre debemos 'Citar' nuestras fuentes, es decir, mencionar de dónde sacamos la información.<br><br>Word tiene un cerebro interno para manejar esto. En lugar de escribir la bibliografía a mano al final del trabajo, usamos el botón 'Insertar Cita' > 'Agregar nueva fuente' en la pestaña 'Referencias'. Aparecerá un formulario donde le indicas al programa los datos del libro o sitio web que consultaste. Word insertará una pequeña marca en tu texto (Ej: Pérez, 2023). Al final de tu trabajo, haces clic en el botón 'Bibliografía', y el programa genera automáticamente la lista completa de todos los libros que registraste, ordenados alfabéticamente.</p>", 
+  a1:{t:"Registro de Fuentes", d:"Busca un libro que tengas en casa o un artículo de internet. Ve a Referencias > Insertar Cita > Agregar nueva fuente, llena los datos del formulario y guarda la fuente."}, 
+  a2:{t:"La Bibliografía", d:"Escribe un pequeño resumen de lo que leíste en ese libro. Al final de la hoja, usa el botón 'Bibliografía' para insertar automáticamente la referencia completa del autor."}, 
+  v:"citas y bibliografia normas apa word"},
+ {t:"Semana 5: Tablas de Datos y Gráficos SmartArt", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Presentar datos numéricos y diagramas lógicos de forma limpia y estructurada sin saturar visualmente el documento.</p><p><strong>📖 Explicación detallada:</strong><br>Una tabla profesional se enfoca en la limpieza. La regla de oro en el nivel avanzado es evitar las líneas verticales. Una tabla formal solo debe tener 3 líneas horizontales gruesas: una arriba de los títulos de las columnas, una debajo de los títulos, y una al final de toda la tabla. Las líneas divisorias verticales distraen la vista de los datos importantes.<br><br>Por otro lado, si necesitas explicar los pasos de un proceso o un organigrama, no uses formas sueltas tratando de unirlas con flechas. Word incluye SmartArt en la pestaña Insertar. Son diagramas preprogramados. Solo eliges un diseño, escribes tu texto en el panel lateral, y el programa automáticamente acomoda los tamaños, las flechas y los colores para mantener un equilibrio visual perfecto.</p>", 
+  a1:{t:"Tabla Minimalista", d:"Inserta una tabla de 3x3. Entra a 'Diseño de tabla' > 'Bordes' y quítale todos los bordes. Luego, ponle una línea horizontal solo arriba y abajo de la primera fila, y otra al final de la tabla."}, 
+  a2:{t:"Diagrama de Procesos", d:"Ve a Insertar > SmartArt. Elige un gráfico de tipo 'Ciclo' y crea un diagrama que explique las 4 estaciones del año de forma visual y colorida."}, 
+  v:"tablas apa y smartart word"},
+ {t:"Semana 6: Trabajo Colaborativo y Control de Cambios", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Dominar las herramientas de edición y revisión para trabajar en equipo y recibir correcciones de los profesores.</p><p><strong>📖 Explicación detallada:</strong><br>Cuando trabajas en grupo o envías tu proyecto a un profesor, se utiliza la pestaña de 'Revisar'. En lugar de escribir tus dudas directamente en el texto arruinando el trabajo, seleccionas una palabra y haces clic en 'Nuevo Comentario'. Esto abre un globo al margen donde puedes escribir notas.<br><br>La herramienta más poderosa es el 'Control de Cambios'. Al activarlo, la computadora graba todo lo que haces. Si borras una palabra, se tacha en color rojo. Si agregas una, aparece subrayada en rojo. Esto permite que la otra persona vea exactamente qué modificaste en su documento original. Luego, el dueño del documento puede ir por cada corrección presionando 'Aceptar' o 'Rechazar' cambio por cambio, manteniendo el control absoluto de su trabajo final.</p>", 
+  a1:{t:"El Corrector Humano", d:"Escribe un párrafo y activa el botón 'Control de Cambios' (Pestaña Revisar). Borra dos palabras y agrega una nueva. Observa cómo Word marca tus acciones con líneas rojas."}, 
+  a2:{t:"Aprobación de Ediciones", d:"Pídele a un compañero que revise tu documento. Usa los botones 'Aceptar' o 'Rechazar' en la pestaña Revisar para decidir si te quedas con los cambios sugeridos o no."}, 
+  v:"control de cambios y comentarios word"},
+ {t:"Semana 7: Automatización: Combinar Correspondencia", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Conectar una base de datos externa al procesador de texto para generar documentos masivos automáticamente.</p><p><strong>📖 Explicación detallada:</strong><br>Imagina que necesitas imprimir 500 cartas de invitación, cada una con un nombre diferente. Escribirlas una por una tomaría días. La solución profesional se llama Combinar Correspondencia, una función que permite que Word se comunique con Excel (la base de datos).<br><br>Primero, creas una 'Carta Modelo' en Word, dejando un espacio vacío donde debería ir el nombre. Luego vas a la pestaña 'Correspondencia' > 'Seleccionar destinatarios' y vinculas un archivo de Excel que tenga los nombres. Insertarás un 'Campo Combinado' en ese espacio vacío. Al presionar el botón 'Finalizar y Combinar', la computadora cruzará los datos y generará un nuevo documento de 500 páginas, donde cada carta está perfectamente personalizada. ¡Ahorraste semanas de trabajo en segundos!</p>", 
+  a1:{t:"La Base de Datos", d:"Abre Excel y haz una tabla muy simple con 3 columnas: Nombre, Apellido y Nota. Llena 3 filas con datos inventados y guárdalo."}, 
+  a2:{t:"La Fusión Masiva", d:"Abre Word. Escribe 'Hola [Nombre], tu nota es [Nota]'. Ve a la pestaña Correspondencia, vincula tu Excel e inserta los 'Campos Combinados'. Finaliza la combinación para ver tus cartas listas."}, 
+  v:"como combinar correspondencia en word"},
+ {t:"Semana 8: Proyecto Final: Exportación y Seguridad", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Consolidar el documento, proteger su integridad (formato y datos) y exportarlo para su distribución digital.</p><p><strong>📖 Explicación detallada:</strong><br>Si envías un archivo original de Word (.docx) por correo, corres el riesgo de que al abrirlo en otro dispositivo los márgenes se muevan y tu trabajo se vea desastroso, o que alguien lo modifique sin tu permiso.<br><br>La solución es la Exportación a PDF. Un PDF es como tomarle una 'fotografía inamovible' a tu documento. Guarda las fuentes y márgenes de forma permanente y nadie podrá modificarlo fácilmente. Se hace yendo a Archivo > Guardar como > Tipo: PDF.<br><br>Por otro lado, si el documento contiene información altamente confidencial, puedes ponerle un candado de grado militar. Ve a Archivo > Información > Proteger Documento > Cifrar con Contraseña. Si alguien intercepta ese archivo, le será matemáticamente imposible abrir el texto sin conocer la clave exacta.</p>", 
+  a1:{t:"El Sellado Inamovible", d:"Toma el mejor documento que hayas creado en esta unidad. Ve a 'Guardar como' y cambia el tipo de archivo a 'PDF'. Ábrelo y verifica que no se puede editar con un simple clic."}, 
+  a2:{t:"Seguridad Militar", d:"Abre un documento de Word nuevo. Escribe un mensaje secreto. Ve a Archivo > Información > Proteger documento > Cifrar con contraseña. Pon una clave, ciérralo e intenta abrirlo de nuevo."}, 
+  v:"guardar como pdf y poner contraseña word"}
 ];
 
-// =====================================================================
-// ↑↑↑ ¡PEGA TU CONTENIDO JUSTO ENCIMA DE ESTA LÍNEA! ↑↑↑
-// =====================================================================
+const b1_bim2 = [
+ {t:"Semana 1: Reglas de Diseño y la Ley 10/20/30", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Planificar el contenido visual de una exposición evitando la saturación de texto y respetando las reglas profesionales.</p><p><strong>📖 Explicación detallada:</strong><br>El error más grande al exponer es usar PowerPoint como un teleprompter para leer todo el texto frente a la clase. Una presentación es un apoyo visual para tu voz, no un documento de lectura. Para evitar aburrir a la audiencia, los profesionales utilizan la 'Regla 10/20/30'.<br><br>Esta regla dicta que una buena presentación debe tener un máximo de 10 diapositivas, durar no más de 20 minutos, y usar un tamaño de fuente de al menos 30 puntos. Si usas letra tamaño 30, te obligarás matemáticamente a escribir pocas palabras en la pantalla. Además, debemos aplicar la regla del contraste: si el fondo es oscuro, la letra debe ser clara.</p>", 
+  a1:{t:"Auditoría de Texto", d:"Busca una presentación vieja que hayas hecho en primaria. Cuenta cuántas palabras hay en una de las diapositivas y trata de reducir ese texto a solo 5 palabras clave o viñetas."}, 
+  a2:{t:"La Regla del 30", d:"Abre una presentación nueva. Escribe tu nombre y configura la fuente a tamaño 30. Aléjate un metro de la pantalla y comprueba lo fácil que es leerlo desde lejos."}, 
+  v:"regla 10 20 30 presentaciones efectivas"},
+ {t:"Semana 2: El Patrón de Diapositivas (Slide Master)", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Modificar la plantilla maestra para aplicar cambios de diseño (logos, colores, fuentes) a todas las diapositivas simultáneamente.</p><p><strong>📖 Explicación detallada:</strong><br>Imagina que tienes una presentación de 50 diapositivas y el profesor te pide que pongas el logo del colegio en la esquina de cada una. Copiar y pegar el logo 50 veces es ineficiente y, si lo mueves un milímetro por error, se verá saltando al cambiar de hoja. La solución es el 'Patrón de Diapositivas'.<br><br>Ve a la pestaña 'Vista' y haz clic en 'Patrón de diapositivas'. Entrarás al 'cuarto de máquinas' de tu presentación. La primera diapositiva que aparece arriba es la 'Madre'. Cualquier cosa que pongas ahí (un logo, un fondo nuevo, un tipo de letra), se aplicará automáticamente e inamoviblemente a todas las demás diapositivas del proyecto. Al terminar, haces clic en 'Cerrar vista patrón' y regresas a tu área de trabajo normal, con todo el diseño estandarizado y bloqueado para que no lo borres por accidente.</p>", 
+  a1:{t:"El Cuarto de Máquinas", d:"Ve a Vista > Patrón de diapositivas. Sube hasta la diapositiva principal número 1. Inserta una forma (un cuadrado) en la esquina superior derecha."}, 
+  a2:{t:"Cambio Global", d:"Cierra la vista patrón y agrega 5 diapositivas nuevas a tu presentación. Observa cómo todas ya traen el cuadrado en la esquina y no puedes moverlo ni borrarlo accidentalmente."}, 
+  v:"patron de diapositivas powerpoint"},
+ {t:"Semana 3: Animaciones Avanzadas y Transición Transformación", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Diferenciar entre animaciones y transiciones, utilizando el efecto 'Morph' para crear dinamismo cinematográfico.</p><p><strong>📖 Explicación detallada:</strong><br>Es vital entender la diferencia técnica: las 'Transiciones' son cómo pasa de una hoja a otra, mientras que las 'Animaciones' son cómo se mueven los textos o imágenes dentro de una misma hoja. Llenar tu trabajo de animaciones de rebote, estrellas y ruidos mareará a la audiencia y restará seriedad a tu tema.<br><br>La herramienta más profesional y moderna de PowerPoint es la transición llamada 'Transformación' (Morph). Para usarla, duplicas una diapositiva. En la segunda copia, cambias el tamaño de una foto y mueves el texto de lugar. Al aplicarles la transición 'Transformación', la computadora calcula matemáticamente el viaje de esos elementos y crea una animación fluida (como si la foto flotara y creciera sola), dando un efecto de video profesional sin tener que programar complicadas trayectorias de animación.</p>", 
+  a1:{t:"El Efecto Morph", d:"Inserta un círculo azul a la izquierda de la Diapositiva 1. Duplica la diapositiva. En la Diapositiva 2, mueve el círculo a la derecha y hazlo rojo. Aplica la transición 'Transformación' a la hoja 2."}, 
+  a2:{t:"Visualización Cinematográfica", d:"Presiona F5 o el botón de 'Presentar'. Pasa de la diapositiva 1 a la 2 y observa cómo el círculo viaja y cambia de color automáticamente de forma fluida."}, 
+  v:"transicion transformacion powerpoint morph"},
+ {t:"Semana 4: Gráficos Vinculados y Multimedia", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Incrustar elementos multimedia y vincular gráficos dinámicos desde hojas de cálculo externas.</p><p><strong>📖 Explicación detallada:</strong><br>Una presentación corporativa necesita datos reales. Si copias un gráfico de Excel y lo pegas en PowerPoint como una simple imagen, cuando los datos de Excel cambien (por ejemplo, si suben las ventas), tu imagen quedará obsoleta. Al pegar el gráfico, debes usar la opción 'Mantener formato de origen y vincular datos'. Esto crea un puente invisible: si cambias el número en Excel, la barra del gráfico en PowerPoint crecerá sola automáticamente.<br><br>Además, insertar videos desde la computadora hace que el archivo quede muy pesado y difícil de enviar por correo. Lo ideal es ir a la pestaña 'Insertar' > 'Video' > 'Video en línea', y pegar el enlace de YouTube. El video se reproducirá directamente dentro de tu diapositiva usando el internet en tiempo real, manteniendo tu archivo liviano y optimizado.</p>", 
+  a1:{t:"El Puente de Datos", d:"Crea un gráfico de pastel simple en Excel y cópialo. Pégalo en PowerPoint eligiendo la opción de pegado que tiene el símbolo de 'vínculo' (la pequeña cadena)."}, 
+  a2:{t:"Incrustar YouTube", d:"Busca un video corto en YouTube y copia su enlace. En PowerPoint, ve a Insertar > Video en línea, pega el enlace y acomoda el recuadro como si fuera una foto en tu hoja."}, 
+  v:"vincular excel con powerpoint y videos en linea"},
+ {t:"Semana 5: Hipervínculos y Menús Interactivos", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Romper la navegación lineal creando botones interactivos para saltar a secciones específicas de la presentación.</p><p><strong>📖 Explicación detallada:</strong><br>Por defecto, una presentación va de la hoja 1 a la 2, luego a la 3, como un libro. Pero, ¿qué pasa si el público te hace una pregunta y necesitas regresar rápidamente a la diapositiva 15? Para eso se usan los 'Hipervínculos' o 'Acciones'.<br><br>Puedes dibujar una forma (un botón) en la diapositiva 1, hacer clic derecho sobre ella y seleccionar 'Vínculo'. En el menú, eliges 'Lugar de este documento' y seleccionas la diapositiva a la que quieres que salte. Con esta técnica, puedes crear un Menú Principal interactivo al inicio de tu proyecto. Cuando expongas, no darás clics al azar, sino que presionarás los botones en la pantalla para navegar exactamente a la sección que deseas mostrar, haciendo que tu presentación funcione como una página web o una aplicación.</p>", 
+  a1:{t:"Creación del Botón", d:"En tu diapositiva 1, dibuja un rectángulo que diga 'Ir al Final'. Haz clic derecho > Vínculo > Lugar de este documento, y selecciona la última diapositiva de tu proyecto."}, 
+  a2:{t:"Navegación Táctil", d:"Pon la presentación en modo pantalla completa. Haz clic en el botón que creaste y comprueba cómo el sistema 'salta' todas las demás diapositivas y te lleva directo al final."}, 
+  v:"como hacer menu interactivo en powerpoint"},
+ {t:"Semana 6: Notas del Orador y Vista Moderador", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Utilizar pantallas duales para leer los apuntes de forma privada mientras el público solo ve la diapositiva gráfica.</p><p><strong>📖 Explicación detallada:</strong><br>El secreto mejor guardado de los grandes expositores es la 'Vista Moderador'. Si aplicaste bien la Regla del 10/20/30, tu diapositiva solo tendrá imágenes y 3 palabras. Entonces, ¿de dónde lees la información que tienes que decir? De las 'Notas del orador'.<br><br>En la parte inferior de PowerPoint hay un panel oculto llamado 'Notas'. Ahí puedes escribir todo el guion completo de lo que quieres decir. Cuando conectas tu computadora a un proyector o pantalla de TV, la computadora activa la Vista Moderador automáticamente. El público (en el proyector) solo verá la foto gigante. Pero tú (en la pantalla de tu laptop) verás un panel de control con un reloj, la diapositiva actual, la que sigue, y un cuadro gigante con todo tu guion para que lo leas disimuladamente, como si fuera un teleprompter de noticias.</p>", 
+  a1:{t:"Escribir el Guion", d:"Ve a la parte inferior de la pantalla de edición, levanta la barra que dice 'Notas' y escribe un guion completo de 5 líneas sobre lo que explicarías en esa diapositiva."}, 
+  a2:{t:"Simulacro de Teleprompter", d:"Ve a la pestaña 'Presentación con diapositivas' y marca la casilla 'Usar vista Moderador'. Presiona Alt+F5 para activar la vista en tu propia pantalla y ver cómo luce tu panel de control privado."}, 
+  v:"vista moderador powerpoint como usar"},
+ {t:"Semana 7: Ensayos, Intervalos y Grabación", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Automatizar el avance de la presentación usando la herramienta de grabación para entregas asincrónicas.</p><p><strong>📖 Explicación detallada:</strong><br>A veces necesitas enviar tu presentación por correo y no estarás ahí para exponerla. O tal vez tienes un tiempo límite exacto de 5 minutos para hablar. Para esto se usan los 'Intervalos'.<br><br>En la pestaña 'Presentación con diapositivas', existe un botón llamado 'Ensayar intervalos'. Al pulsarlo, la presentación inicia y aparece un cronómetro. La computadora grabará exactamente cuántos segundos te tardaste hablando en la primera hoja, y cuándo hiciste clic para pasar a la siguiente. Al terminar, la presentación quedará automatizada. Si envías ese archivo, la persona solo le dará Play, y las diapositivas avanzarán solas respetando tu tiempo. Si además usas la opción 'Grabar presentación', el programa encenderá tu micrófono y cámara, grabando tu voz sobre cada diapositiva de forma permanente.</p>", 
+  a1:{t:"Ensayo General", d:"Abre una presentación de 3 hojas. Presiona 'Ensayar intervalos'. Habla durante 5 segundos exactos en la primera hoja y pasa a la siguiente. Al final, dile que Sí deseas guardar los tiempos."}, 
+  a2:{t:"Piloto Automático", d:"Presiona F5 para ver tu presentación y quita las manos del teclado. Observa cómo las diapositivas avanzan solas exactamente en el segundo que las programaste."}, 
+  v:"ensayar intervalos y grabar powerpoint"},
+ {t:"Semana 8: Proyecto Final: Exportación como Video", 
+  c:"<p><strong>🎓 Lo que aprenderemos:</strong> Consolidar el proyecto con intervalos, voz y transiciones, para exportarlo (renderizarlo) en formato de video universal.</p><p><strong>📖 Explicación detallada:</strong><br>El examen de esta unidad consiste en crear un 'Pitch' (una presentación corta para vender una idea o proyecto). Deberás aplicar el Patrón de diapositivas para tu logo, crear hipervínculos de menú, ensayar los intervalos para que la presentación avance sola, y usar la vista moderador para tu guion.<br><br>Al final, no entregarás un archivo de PowerPoint (.pptx). La forma más segura de asegurarte de que tu presentación automatizada funcione en el celular o tablet del profesor sin errores, es convertirla en una película. Vas a 'Archivo' > 'Exportar' > 'Crear un video'. Al elegir la calidad (1080p Full HD), PowerPoint renderizará todas tus transiciones, animaciones y tiempos automatizados para crear un archivo universal MP4, demostrando tu dominio avanzado de la herramienta.</p>", 
+  a1:{t:"El Pitch de Venta", d:"Arma una presentación de 4 diapositivas sobre un producto que te gustaría inventar. Asegúrate de incluir el diseño de la diapositiva madre (Patrón) y un botón de inicio."}, 
+  a2:{t:"Renderizado MP4", d:"Graba tus intervalos. Luego ve a Archivo > Exportar > Crear un video, y guárdalo en formato MP4. Ábrelo en el reproductor de video de tu computadora para ver tu película final."}, 
+  v:"guardar presentacion de powerpoint como video mp4"}
+];
 
-  
+const b1_bim3 = []; const b1_bim4 = [];
+
+// === 2DO BÁSICO ===
+const b2_bim1 = []; const b2_bim2 = []; const b2_bim3 = []; const b2_bim4 = [];
+
+// === 3RO BÁSICO ===
+const b3_bim1 = []; const b3_bim2 = []; const b3_bim3 = []; const b3_bim4 = [];
+
+// --- ESTRUCTURA PRINCIPAL UNIFICADA ---
+const appData = [
+ {id:"g1",t:"1ro Primaria",s:"Iniciación",b:[{t:"Bimestre 1",s:"Mi Oficina Móvil",l:false,w:g1_b1},{t:"Bimestre 2",s:"Nube y Docs",l:false,w:g1_b2},{t:"Bimestre 3",s:"Canva Kids",l:false,w:g1_b3},{t:"Bimestre 4",s:"IA Básica",l:false,w:g1_b4}]},
+ {id:"g2",t:"2do Primaria",s:"Explorador",b:[{t:"Bimestre 1",s:"Interfaz",l:false,w:g2_b1},{t:"Bimestre 2",s:"Escritura",l:false,w:g2_b2},{t:"Bimestre 3",s:"Artista",l:false,w:g2_b3},{t:"Bimestre 4",s:"IA Voz",l:false,w:g2_b4}]},
+ {id:"g3",t:"3ro Primaria",s:"Creador",b:[{t:"Bimestre 1",s:"Edición",l:false,w:g3_b1},{t:"Bimestre 2",s:"Docs Pro",l:false,w:g3_b2},{t:"Bimestre 3",s:"Slides Pro",l:false,w:g3_b3},{t:"Bimestre 4",s:"IA Tools",l:false,w:g3_b4}]},
+ {id:"g4",t:"4to Primaria",s:"Multimedia",b:[{t:"Bimestre 1",s:"Video",l:false,w:g4_b1},{t:"Bimestre 2",s:"Ofimática",l:false,w:g4_b2},{t:"Bimestre 3",s:"Diseño",l:false,w:g4_b3},{t:"Bimestre 4",s:"IA Ayuda",l:false,w:g4_b4}]},
+ {id:"g5",t:"5to Primaria",s:"Productividad",b:[{t:"Bimestre 1",s:"Nube",l:false,w:g5_b1},{t:"Bimestre 2",s:"Sheets",l:false,w:g5_b2},{t:"Bimestre 3",s:"Web",l:false,w:g5_b3},{t:"Bimestre 4",s:"IA Gen",l:false,w:g5_b4}]},
+ {id:"g6",t:"6to Primaria",s:"Profesional",b:[{t:"Bimestre 1",s:"Oficina Pro",l:false,w:g6_b1},{t:"Bimestre 2",s:"Colaboración",l:false,w:g6_b2},{t:"Bimestre 3",s:"Video Pro",l:false,w:g6_b3},{t:"Bimestre 4",s:"IA Pro",l:false,w:g6_b4}]},
+ 
+ // BÁSICOS
+ {id:"b1", t:"1ro Básico", s:"Fundamentos Digitales", b:[
+    {t:"Bimestre 1", s:"Word Profesional", l:false, w:b1_bim1},
+    {t:"Bimestre 2", s:"PowerPoint Avanzado", l:false, w:b1_bim2},
+    {t:"Bimestre 3", s:"Seguridad y Ciudadanía", l:true, w:b1_bim3},
+    {t:"Bimestre 4", s:"IA de Texto", l:true, w:b1_bim4}
+ ]},
+ {id:"b2", t:"2do Básico", s:"Análisis y Diseño", b:[
+    {t:"Bimestre 1", s:"Excel Elemental", l:true, w:b2_bim1},
+    {t:"Bimestre 2", s:"Diseño y Comunicación", l:true, w:b2_bim2},
+    {t:"Bimestre 3", s:"Estructura Web (HTML)", l:true, w:b2_bim3},
+    {t:"Bimestre 4", s:"IA Visual y Prompts", l:true, w:b2_bim4}
+ ]},
+ {id:"b3", t:"3ro Básico", s:"Productividad Pro", b:[
+    {t:"Bimestre 1", s:"Excel Avanzado", l:true, w:b3_bim1},
+    {t:"Bimestre 2", s:"Edición Multimedia", l:true, w:b3_bim2},
+    {t:"Bimestre 3", s:"Nube y Colaboración", l:true, w:b3_bim3},
+    {t:"Bimestre 4", s:"Copilotos IA", l:true, w:b3_bim4}
+ ]}
+];
+
 // --- MOTOR DE LA APP Y LÓGICA DE USUARIOS ---
 const m=document.getElementById("m"), h=document.getElementById("t"), bk=document.getElementById("b");
 const loginScreen = document.getElementById("login-screen");
@@ -1215,6 +1315,14 @@ function cargarPlataforma(datosUsuario) {
     st.userData = datosUsuario;
     loginScreen.style.display = "none";
     navbar.classList.remove("hid"); mainContent.classList.remove("hid");
+    
+    // MAGIA DE COLOR: Si el ID del grado empieza con "b" (b1, b2, b3), activamos la clase verde.
+    if(datosUsuario.grado.startsWith('b')) {
+        document.body.classList.add('tema-basico');
+    } else {
+        document.body.classList.remove('tema-basico');
+    }
+
     st.g = appData.find(grado => grado.id === datosUsuario.grado);
     if (st.g) {
         st.g.b.forEach((bim, index) => { bim.l = !datosUsuario.bimestres.includes(index); });
